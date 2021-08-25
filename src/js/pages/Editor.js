@@ -88,7 +88,7 @@ const Editor = () => {
           {/*<pre id="generated-xml">{xml}</pre>*/}
           <textarea
             id="code"
-            class="h-25"
+            class="h-25 border py-3"
             style={{ width: "100%", resize: "none"}}
             value={javascriptCode}
             readOnly
