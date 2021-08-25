@@ -9,7 +9,7 @@ import User from "./pages/User";
 
 const app = document.getElementById('app');
 ReactDOM.render(
-  <Router>
+  <Router basename={process.env.PUBLIC_URL}>
     <Layout>
       <Route exact path="/" component={Top}></Route>
       <Route exact path="/editor" component={Editor}></Route>

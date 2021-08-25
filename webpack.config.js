@@ -38,7 +38,7 @@ module.exports = {
   output: {
     path: __dirname + "/src/",
     filename: "client.min.js",
-    publicPath: '/'
+    publicPath: '/programming-diary/'
   },
   plugins: debug ? [] : [
     new webpack.optimize.OccurrenceOrderPlugin(),
