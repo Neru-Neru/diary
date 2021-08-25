@@ -7,7 +7,12 @@ const User = () =>{
         <div class="container" style={{height:"90%"}}>
           <div class="row">
               <div class="col-4 p-2">
-                <Calendar></Calendar>
+                <div class="h-25">
+                  Profile
+                </div>
+                <div class="h-75">
+                  <Calendar></Calendar>
+                </div>
               </div>
               <div class="col-8 p-2">
                   <h3>Project</h3>

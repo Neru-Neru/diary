@@ -47,22 +47,17 @@ const DiaryList = () =>{
     const classes = useStyles();
 
     const handleClick = (tile) =>{
-        console.log(tile.title);
+      alert(tile.title);
     }
 
     return (
         <div className={classes.root}>
           <GridList autoHeight cellHeight={300} className={classes.gridList} cols={3}>
             {sampleImageList.map((tile) => (
-              <GridListTile key={tile.img} cols={tile.cols || 1}>
+              <GridListTile key={tile.img} cols={tile.cols || 1} onClick={() => {handleClick(tile)}}>
                 <img src={tile.img} alt={tile.title}/>
                 <GridListTileBar
                   title={tile.title}
-                  actionIcon={
-                    <IconButton className={classes.icon} onClick={() => {handleClick(tile)}}>
-                        <InfoIcon />
-                    </IconButton>
-                  }
                 />
               </GridListTile>
             ))}

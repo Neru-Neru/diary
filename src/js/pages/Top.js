@@ -4,7 +4,7 @@ import Calendar from "./Calender";
 
 const Top = () => {
   return (
-        <div class="container">
+        <div class="container" style={{height:"100%"}}>
 
           <div class="row h-75">
             <div class="col-md-8">

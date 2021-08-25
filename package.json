@@ -8,11 +8,8 @@
     "dev": "webpack --mode development",
     "watch": "webpack --mode development --watch",
     "start": "webpack serve",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d src"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "homepage": "https://neru-neru.github.io/programming-diary",
   "author": "Yuma Adachi",
   "license": "ISC",
   "devDependencies": {

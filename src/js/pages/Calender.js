@@ -10,15 +10,13 @@ const Calendar = () =>{
       }, []);
 
     return(
-        <div>
         <FullCalendar
           plugins={[dayGridPlugin, interactionPlugin]}
           initialView="dayGridMonth"
           locales={allLocales}
           locale="ja"
-          contentHeight='auto'
+          height="100%"
           dateClick={handleDateClick}/>
-        </div>
     );
 }
 
