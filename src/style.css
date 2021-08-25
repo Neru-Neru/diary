@@ -1,0 +1,51 @@
+body{
+    height: 100%;
+    margin:0;
+    padding-top: 6rem;
+    background: #f2f2f2;
+}
+
+html{
+    height: 100%;
+}
+
+pre{
+    white-space:pre-wrap;
+    white-space:-moz-pre-wrap;
+    white-space:-o-pre-wrap;
+    white-space:-pre-wrap;
+    word-wrap:break-word;
+}
+.font-awesome{
+    padding:0;
+}
+
+.bluebell{
+    background-color: #92AAC7;
+}
+
+.gray-char{
+    color:#f2f2f2;
+}
+
+.mid-font{
+    text-align: center;
+    line-height: 100%;
+}
+
+.size-30px{
+    font-size: 30px;
+}
+
+.video-wrapper{
+    position: relative;
+    padding-top: 56.25% /* Player ratio: 100 / (1280 / 720) */
+}
+
+.main-player{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+ }
