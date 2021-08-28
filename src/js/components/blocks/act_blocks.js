@@ -1,17 +1,17 @@
 import Blockly from 'blockly';
 
-Blockly.Blocks['.sleep'] = {
+Blockly.Blocks['.run'] = {
     init: function() {
       this.appendDummyInput()
-        .appendField("寝る");
+        .appendField("走る");
       this.setOutput(false);
       this.setColour(230);
-      this.setTooltip("ねる");
+      this.setTooltip("はしる");
     }
 };
 
-Blockly.JavaScript['.sleep'] = function(block) {
-  var code = '寝る';
+Blockly.JavaScript['.run'] = function(block) {
+  var code = '走る';
   return code;
 };
 

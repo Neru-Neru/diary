@@ -1,26 +1,15 @@
 import React, {useState} from 'react';
-import ReactPlayer from "react-player";
 
-const Movie = () =>{
+const Movie = (props) =>{
     const [img, setImg] = useState("");
+    const {clickEvent} = props;
 
     const handleChange = (event) =>{
         setName(event.target.value);
         console.log(videoname);
     }
 
-    const handleClick_old = () =>{
-        fetch(`https://www.googleapis.com/youtube/v3/search?type=video&part=snippet&q=${videoname}&maxResults=1&key=${YOUTUBE_API_KEY}`)
-        .then(res => res.json())
-        .then((result) => {
-            console.log(result.items);
-            setUrl(result.items[0].id.videoId);
-        }).catch(error => {
-            console.log(error);
-        });
-    }
-
-    const handleClick = () =>{
+    const handleClick_dog = () =>{
         fetch(`https://dog.ceo/api/breeds/image/random`)
         .then(res => res.json())
         .then(result =>{
@@ -29,6 +18,20 @@ const Movie = () =>{
         }).catch(error => {
             console.log(error);
         });
+    }
+
+    const handleClick = () =>{
+        const {elements, actions} = clickEvent();
+        let url = 'https://localhost:5000?';
+        for(let i = 0; i < elements.length; i++)
+            url += 'element['+i+']='+elements[i]+'&';
+        for(let i = 0; i < actions.length; i++){
+            url += 'actions['+i+']='+actions[i];
+            if (i < actions.length-1)
+                url += '&';
+        }
+        console.log(url);
+        //window.open(, '_blank'); // 新しいタブを開き、ページを表示
     }
 
     return(

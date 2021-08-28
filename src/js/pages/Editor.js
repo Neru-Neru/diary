@@ -43,6 +43,10 @@ const Editor = () => {
             kind: "block",
             type: "car",
           },
+          {
+            kind: "block",
+            type: "train",
+          },
         ],
       },
       {
@@ -55,7 +59,7 @@ const Editor = () => {
           },
           {
             kind: "block",
-            type: ".sleep",
+            type: ".run",
           },
           {
             kind: "block",
@@ -82,29 +86,27 @@ const Editor = () => {
     var blocks = xmlDoc.getElementsByTagName("block");
     var actions=[];
     var elements=[];
-    var flg = true;
-    for(var i=0; i<blocks.length; i++){
+    var flg = true; //elementの時はtrue, actionの時はfalseとする
+    for(var i=0; i<blocks.length; i++){ //ブロック数分繰り返す
       var type_name = blocks[i].getAttribute("type");
-      if (type_name.charAt(0) != '.')
+      if (type_name.charAt(0) != '.') //一文字目が.以外（elementの時）
       {
-        elements.push(type_name);
-        flg = !flg;
+        elements.push(type_name); //elements配列末尾に追加
+        flg = !flg; //flgをfalseに
       }
-      else
+      else //一文字目が.（actionの時）
       {
-        actions.push(type_name);
-        if (flg)
+        actions.push(type_name.substr(1)); //actions配列末尾に追加
+        if (flg) //flg==trueのとき→elementを必要としないactionの時(自動詞)
         {
-          elements.push("");
-          flg = !flg;
+          elements.push(""); //elements配列末尾に空白追加
+          flg = !flg; //flgをfalseに
         }
-        flg = !flg;
+        flg = !flg; //flgをtrueに
       }
     }
-    console.log(elements);
-    console.log(actions);
+    return {elements, actions};
   }
-
 
   return (
     <div class="container" style={{height: "90%"}}>
@@ -129,9 +131,8 @@ const Editor = () => {
         </div>
         <div class="col-md-4">
           <div class="row mh-100 border py-3">
-            <Movie></Movie>
+            <Movie clickEvent={getQueryStrings}></Movie>
           </div>
-          <button onClick={getQueryStrings}>ボタン</button>
           <div class="row mh-100 border py-3 mt-1">
             <DescForm></DescForm>
           </div>

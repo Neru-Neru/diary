@@ -95,3 +95,19 @@ Blockly.JavaScript['car'] = function(block) {
   var code = '車';
   return code;
 };
+
+Blockly.Blocks['train'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("電車");
+    this.setNextStatement(true, null);
+    this.setColour(0);
+    this.setTooltip("でんしゃ");
+    this.setHelpUrl("");
+  }
+};
+
+Blockly.JavaScript['train'] = function(block) {
+  var code = '電車';
+  return code;
+};
