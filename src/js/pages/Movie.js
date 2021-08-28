@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 
 const Movie = (props) =>{
     const [img, setImg] = useState("");
+    const [url, setUrl] = useState("");
+
     const {clickEvent} = props;
 
     const handleChange = (event) =>{
@@ -31,21 +33,17 @@ const Movie = (props) =>{
                 url += '&';
         }
         console.log(url);
-        window.open(url, '_blank'); // 新しいタブを開き、ページを表示
+        //window.open(url, '_blank'); // 新しいタブを開き、ページを表示
+        setUrl(url);
     }
 
     return(
     <div>
-      <h5>動画</h5>
-      <div>
-        {img =="" ? <p></p>: <img src={img} height="100%" width="100%"></img>}
+      <div class="h-75 border">
+        <iframe src={url} scrolling="no" width="100%" height="100%"></iframe>
       </div>
-      <div>
-          <form>
-              <div class="my-3">
-                <button type="button" class="btn btn-secondary" onClick={handleClick}>見る</button>
-              </div>
-          </form>
+      <div class="d-grid gap-2 col-6 mx-auto mt-3">
+        <button type="button" class="btn btn-secondary" onClick={handleClick}>動画を見る</button>
       </div>
     </div>
     );

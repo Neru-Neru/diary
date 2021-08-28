@@ -24,17 +24,19 @@ const DescForm = () =>{
 
     return(
         <div>
-            <h5>概要を記入</h5>
+            <h5>せつめい</h5>
             <form>
-            <div class="mb-3">
-                <label class="control-label" for="title">タイトル</label>
-                <input class="form-control" id="title" type="text" value={address} onChange={handleChange} autocomplete="off"></input>
-            </div>
-            <div class="mb-3">
-                <label class="control-label" for="description">説明文</label>
-                <textarea class="form-control" id="description" value={state.tenki} style={{resize:"none", height:"10em"}} autocomplete="off"></textarea>
-            </div>
-            <button type="button" class="btn btn-secondary" onClick={handleClick}>日記を書く</button>
+                <div class="mb-3">
+                    <label class="control-label" for="title">タイトル</label>
+                    <input class="form-control" id="title" type="text" value={address} onChange={handleChange} autocomplete="off"></input>
+                </div>
+                <div class="mb-3">
+                    <label class="control-label" for="description">説明文</label>
+                    <textarea class="form-control" id="description" value={state.tenki} style={{resize:"none", height:"10em"}} autocomplete="off"></textarea>
+                </div>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <button type="button" class="btn btn-secondary" onClick={handleClick}>日記を書く</button>
+                </div>
             </form>
         </div>
     );

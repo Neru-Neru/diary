@@ -11,30 +11,37 @@ const Editor = () => {
   const [javascriptCode, setJavascriptCode] = useState("");
   const initialXml =
     '<xml xmlns="http://www.w3.org/1999/xhtml"><block type="text" x="70" y="30"><field name="TEXT"></field></block></xml>';
+
   const toolboxCategories = {
     kind: "categoryToolbox",
     contents: [
       {
         kind: "category",
-        name: "Element",
+        name: "食べ物",
         expanded: true,
         contents: [
           {
             kind: "block",
             type: "curry",
           },
+        ],
+      },
+      {
+        kind: "category",
+        name: "場所",
+        expanded: true,
+        contents: [
           {
             kind: "block",
             type: "park",
           },
-          {
-            kind: "block",
-            type: "baseball",
-          },
-          {
-            kind: "block",
-            type: "game",
-          },
+        ],
+      },
+      {
+        kind: "category",
+        name: "乗り物",
+        expanded: true,
+        contents: [
           {
             kind: "block",
             type: "bicycle",
@@ -51,7 +58,22 @@ const Editor = () => {
       },
       {
         kind: "category",
-        name: "Action",
+        name: "遊び",
+        expanded: true,
+        contents: [
+          {
+            kind: "block",
+            type: "baseball",
+          },
+          {
+            kind: "block",
+            type: "game",
+          },
+        ],
+      },
+      {
+        kind: "category",
+        name: "動作",
         contents: [
           {
             kind: "block",
@@ -111,7 +133,7 @@ const Editor = () => {
   return (
     <div class="container" style={{height: "90%"}}>
       <div class="row h-100">
-        <div class="col-md-8">
+        <div class="col-md-7">
           <BlocklyWorkspace
             toolboxConfiguration={toolboxCategories}
             className="h-75"
@@ -119,21 +141,21 @@ const Editor = () => {
             onXmlChange={setXml}
           />
           {/*<pre id="generated-xml">{xml}</pre>*/}
-          <div class="h-25 border py-3">
+          <div class="h-25 pt-3">
             <textarea
               id="code"
-              class="h-100"
+              class="h-100 border "
               style={{ width: "100%", resize: "none"}}
               value={javascriptCode}
               readOnly
             ></textarea>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="row mh-100 border py-3">
+        <div class="col-md-5">
+          <div class="row h-50 border py-3">
             <Movie clickEvent={getQueryStrings}></Movie>
           </div>
-          <div class="row mh-100 border py-3 mt-1">
+          <div class="row h-50 border py-3 mt-1">
             <DescForm></DescForm>
           </div>
         </div>
