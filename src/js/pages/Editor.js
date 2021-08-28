@@ -51,19 +51,19 @@ const Editor = () => {
         contents: [
           {
             kind: "block",
-            type: "eat",
+            type: ".eat",
           },
           {
             kind: "block",
-            type: "sleep",
+            type: ".sleep",
           },
           {
             kind: "block",
-            type: "ride",
+            type: ".ride",
           },
           {
             kind: "block",
-            type: "play",
+            type: ".play",
           },
         ],
       },
@@ -74,6 +74,37 @@ const Editor = () => {
     const code = Blockly.JavaScript.workspaceToCode(workspace);
     setJavascriptCode(code);
   }
+
+  function getQueryStrings(){
+    console.log('Clicked');
+    var dpObj = new DOMParser();
+    var xmlDoc = dpObj.parseFromString(xml, "text/xml");
+    var blocks = xmlDoc.getElementsByTagName("block");
+    var actions=[];
+    var elements=[];
+    var flg = true;
+    for(var i=0; i<blocks.length; i++){
+      var type_name = blocks[i].getAttribute("type");
+      if (type_name.charAt(0) != '.')
+      {
+        elements.push(type_name);
+        flg = !flg;
+      }
+      else
+      {
+        actions.push(type_name);
+        if (flg)
+        {
+          elements.push("");
+          flg = !flg;
+        }
+        flg = !flg;
+      }
+    }
+    console.log(elements);
+    console.log(actions);
+  }
+
 
   return (
     <div class="container" style={{height: "90%"}}>
@@ -86,18 +117,21 @@ const Editor = () => {
             onXmlChange={setXml}
           />
           {/*<pre id="generated-xml">{xml}</pre>*/}
-          <textarea
-            id="code"
-            class="h-25 border py-3"
-            style={{ width: "100%", resize: "none"}}
-            value={javascriptCode}
-            readOnly
-          ></textarea>
+          <div class="h-25 border py-3">
+            <textarea
+              id="code"
+              class="h-100"
+              style={{ width: "100%", resize: "none"}}
+              value={javascriptCode}
+              readOnly
+            ></textarea>
+          </div>
         </div>
         <div class="col-md-4">
           <div class="row mh-100 border py-3">
             <Movie></Movie>
           </div>
+          <button onClick={getQueryStrings}>ボタン</button>
           <div class="row mh-100 border py-3 mt-1">
             <DescForm></DescForm>
           </div>

@@ -75,7 +75,7 @@ Blockly.Blocks['bicycle'] = {
   }
 };
 
-Blockly.JavaScript['bycicle'] = function(block) {
+Blockly.JavaScript['bicycle'] = function(block) {
   var code = '自転車';
   return code;
 };

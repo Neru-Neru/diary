@@ -1,6 +1,6 @@
 import Blockly from 'blockly';
 
-Blockly.Blocks['sleep'] = {
+Blockly.Blocks['.sleep'] = {
     init: function() {
       this.appendDummyInput()
         .appendField("寝る");
@@ -10,12 +10,12 @@ Blockly.Blocks['sleep'] = {
     }
 };
 
-Blockly.JavaScript['sleep'] = function(block) {
+Blockly.JavaScript['.sleep'] = function(block) {
   var code = '寝る';
   return code;
 };
 
-Blockly.Blocks['eat'] = {
+Blockly.Blocks['.eat'] = {
     init: function() {
       this.appendDummyInput()
           .appendField("を食べる");
@@ -26,12 +26,12 @@ Blockly.Blocks['eat'] = {
     }
   };
 
-Blockly.JavaScript['eat'] = function(block) {
+Blockly.JavaScript['.eat'] = function(block) {
   var code = 'を食べる';
   return code;
 };
 
-Blockly.Blocks['play'] = {
+Blockly.Blocks['.play'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("で遊ぶ");
@@ -42,12 +42,12 @@ Blockly.Blocks['play'] = {
   }
 };
 
-Blockly.JavaScript['play'] = function(block) {
+Blockly.JavaScript['.play'] = function(block) {
 var code = 'で遊ぶ';
 return code;
 };
 
-Blockly.Blocks['ride'] = {
+Blockly.Blocks['.ride'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("に乗る");
@@ -58,7 +58,7 @@ Blockly.Blocks['ride'] = {
   }
 };
 
-Blockly.JavaScript['ride'] = function(block) {
+Blockly.JavaScript['.ride'] = function(block) {
 var code = 'に乗る';
 return code;
 };
