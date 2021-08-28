@@ -27,7 +27,7 @@ export default class Nav extends React.Component {
             </ul>
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <Link to="/user" onClick={this.toggleCollapse.bind(this)}><a class="nav-link"><FaUserAlt size={30} color={'#f2f2f2'}/></a></Link>
+                <Link to="/mypage" onClick={this.toggleCollapse.bind(this)}><a class="nav-link"><FaUserAlt size={30} color={'#f2f2f2'}/></a></Link>
               </li>
               <li class="nav-item d-flex align-items-center">
                 <Link to="/editor" onClick={this.toggleCollapse.bind(this)}><a class="nav-link"><FaBookOpen size={30} color={'#f2f2f2'}/></a></Link>

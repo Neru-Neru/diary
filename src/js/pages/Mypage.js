@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import Calendar from "./Calender";
 import DiaryList from "./DiaryList";
 
-const User = () =>{
+const Mypage = () =>{
+  const moveMyDiaryList = (date) =>{
+
+  }
+
     return(
         <div class="container" style={{height:"90%"}}>
           <div class="row">
@@ -11,12 +15,12 @@ const User = () =>{
                   Profile
                 </div>
                 <div class="h-75">
-                  <Calendar></Calendar>
+                  <Calendar onClick={moveMyDiaryList}></Calendar>
                 </div>
               </div>
               <div class="col-8 p-2">
                   <h3>Project</h3>
-                <DiaryList></DiaryList>
+                  <DiaryList></DiaryList>
               </div>
           </div>
         </div>
@@ -24,4 +28,4 @@ const User = () =>{
     );
 }
 
-export default User;
+export default Mypage;

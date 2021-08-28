@@ -4,9 +4,9 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import allLocales from '@fullcalendar/core/locales-all';
 import interactionPlugin from "@fullcalendar/interaction";
 
-const Calendar = () =>{
-    const handleDateClick = useCallback((arg) => {
-        alert(arg.dateStr);
+const Calendar = (props) =>{
+    const handleClick = useCallback((arg) => {
+        props.onClick(arg.dateStr);
       }, []);
 
     return(
@@ -16,7 +16,7 @@ const Calendar = () =>{
           locales={allLocales}
           locale="ja"
           height="100%"
-          dateClick={handleDateClick}/>
+          dateClick={handleClick}/>
     );
 }
 

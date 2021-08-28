@@ -1,21 +1,27 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Calendar from "./Calender";
 
 const Top = () => {
+  const history = useHistory();
+
+  const moveDiaryOfDate = (date) =>{
+    history.push('/'+date);
+  }
+
   return (
         <div class="container" style={{height:"100%"}}>
 
           <div class="row h-75">
             <div class="col-md-8">
-              <Calendar></Calendar>
+              <Calendar onClick={moveDiaryOfDate}></Calendar>
             </div>
 
             <div class="col-md-4">
               <div class="h-75">
                 <div class="h-100">
                     <Link to="/editor">
-                        <div class="h-100 bg-light d-flex align-items-center justify-content-center">
+                        <div class="h-100 d-flex align-items-center justify-content-center bluebell">
                             <p class="size-30px"><i class="fas fa-book-open text-dark"></i></p>
                         </div>
                     </Link>
@@ -27,15 +33,15 @@ const Top = () => {
                     <div class="row h-100">
                         <div class="col-md-6">
                             <Link to="/">
-                                <div class="h-100 bg-light d-flex align-items-center justify-content-center">
+                                <div class="h-100 d-flex align-items-center justify-content-center bluebell">
                                     <p class="size-30px"><i class="fas fa-envelope-open-text text-dark"></i></p>
                                 </div>
                             </Link>
                         </div>
 
                         <div class="col-md-6">
-                            <Link to="/user">
-                                <div class="h-100 bg-light d-flex align-items-center justify-content-center">
+                            <Link to="/mypage">
+                                <div class="h-100 d-flex align-items-center justify-content-center bluebell">
                                     <p class="size-30px"><i class="fas fa-user text-dark"></i></p>
                                 </div>
                             </Link>
