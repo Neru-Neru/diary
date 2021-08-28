@@ -22,16 +22,16 @@ const Movie = (props) =>{
 
     const handleClick = () =>{
         const {elements, actions} = clickEvent();
-        let url = 'https://localhost:5000?';
+        let url = 'https://terminal-8c860.web.app/pixi?';
         for(let i = 0; i < elements.length; i++)
             url += 'element['+i+']='+elements[i]+'&';
         for(let i = 0; i < actions.length; i++){
-            url += 'actions['+i+']='+actions[i];
+            url += 'action['+i+']='+actions[i];
             if (i < actions.length-1)
                 url += '&';
         }
         console.log(url);
-        //window.open(, '_blank'); // 新しいタブを開き、ページを表示
+        window.open(url, '_blank'); // 新しいタブを開き、ページを表示
     }
 
     return(
