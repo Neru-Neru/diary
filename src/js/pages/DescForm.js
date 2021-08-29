@@ -16,7 +16,7 @@ const DescForm = (props) =>{
         console.log(title);
     }
 
-    const handleClick = () => { //にっきをかくボタン
+    const handleClick = (FormData) => { //にっきをかくボタン
         const {elements, actions} = clickEvent();
         let url = 'https://terminal-8c860.web.app/save?';
 
@@ -37,6 +37,8 @@ const DescForm = (props) =>{
                 query += '&';
         }
         url += encodeURIComponent(query);
+
+        url += '&title=' + title + '&description=' + description;
         console.log(url);
         //window.open(url, '_blank'); // 新しいタブを開き、ページを表示
         //setUrl(url);
@@ -48,11 +50,11 @@ const DescForm = (props) =>{
             <form>
                 <div class="mb-3">
                     <label class="control-label" for="title">タイトル</label>
-                    <input class="form-control" id="title" type="text" value={title} onChange={changeTitle} autocomplete="off"></input>
+                    <input class="form-control" id="title" type="text" value={title} onChange={changeTitle} autocomplete="off" required></input>
                 </div>
                 <div class="mb-3">
                     <label class="control-label" for="description">せつめい</label>
-                    <textarea class="form-control" id="description" value={description} onChange={changeDescription} style={{resize:"none", height:"10em"}} autocomplete="off"></textarea>
+                    <textarea class="form-control" id="description" value={description} onChange={changeDescription} style={{resize:"none", height:"10em"}} autocomplete="off" required></textarea>
                 </div>
                 <div class="d-grid gap-2 col-6 mx-auto">
                     <button type="button" class="btn btn-secondary" onClick={handleClick}>にっきをかく</button>

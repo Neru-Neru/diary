@@ -43,6 +43,7 @@
     "react-blockly": "^7.0.0-alpha.1",
     "react-calendar": "^3.4.0",
     "react-dates": "^21.8.0",
+    "react-hook-form": "^7.14.0",
     "react-icon": "^1.0.0",
     "react-icons": "^4.2.0",
     "react-player": "^2.9.0",

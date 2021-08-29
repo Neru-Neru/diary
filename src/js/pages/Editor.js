@@ -17,8 +17,9 @@ const Editor = () => {
     contents: [
       {
         kind: "category",
-        name: "食べ物",
+        name: "たべもの",
         expanded: true,
+        colour: 0,
         contents: [
           {
             kind: "block",
@@ -28,8 +29,9 @@ const Editor = () => {
       },
       {
         kind: "category",
-        name: "場所",
+        name: "ばしょ",
         expanded: true,
+        colour: 0,
         contents: [
           {
             kind: "block",
@@ -39,8 +41,9 @@ const Editor = () => {
       },
       {
         kind: "category",
-        name: "乗り物",
+        name: "のりもの",
         expanded: true,
+        colour: 0,
         contents: [
           {
             kind: "block",
@@ -58,8 +61,9 @@ const Editor = () => {
       },
       {
         kind: "category",
-        name: "遊び",
+        name: "あそび",
         expanded: true,
+        colour: 0,
         contents: [
           {
             kind: "block",
@@ -73,7 +77,8 @@ const Editor = () => {
       },
       {
         kind: "category",
-        name: "動作",
+        name: "どうさ",
+        colour: 230,
         contents: [
           {
             kind: "block",
@@ -101,8 +106,7 @@ const Editor = () => {
     setJavascriptCode(code);
   }
 
-  function getQueryStrings(){
-    console.log('Clicked');
+  function getQueryStrings(){ //ブロックからクエリ(配列)を生成
     var dpObj = new DOMParser();
     var xmlDoc = dpObj.parseFromString(xml, "text/xml");
     var blocks = xmlDoc.getElementsByTagName("block");

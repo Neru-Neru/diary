@@ -14,7 +14,7 @@ const Movie = (props) =>{
         for(let i = 0; i < actions.length; i++){
             url += 'action['+i+']='+actions[i];
             if (i < actions.length-1)
-                url += '&';
+              url += '&';
         }
         console.log(encodeURIComponent(url));
         //window.open(url, '_blank'); // 新しいタブを開き、ページを表示

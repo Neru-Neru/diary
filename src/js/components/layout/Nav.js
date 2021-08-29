@@ -22,21 +22,21 @@ export default class Nav extends React.Component {
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <Link to="/" onClick={this.toggleCollapse.bind(this)}><a class="navbar-brand gray-char">海街Diary</a></Link>
+                <Link to="/" onClick={this.toggleCollapse.bind(this)} class="text-decoration-none"><a class="navbar-brand gray-char text-dark">海街Diary</a></Link>
               </li>
             </ul>
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <Link to="/mypage" onClick={this.toggleCollapse.bind(this)}><a class="nav-link"><FaUserAlt size={30} color={'#f2f2f2'}/></a></Link>
+                <Link to="/mypage" onClick={this.toggleCollapse.bind(this)}><a class="nav-link"><FaUserAlt size={25} class="text-dark"/></a></Link>
               </li>
               <li class="nav-item d-flex align-items-center">
-                <Link to="/editor" onClick={this.toggleCollapse.bind(this)}><a class="nav-link"><FaBookOpen size={30} color={'#f2f2f2'}/></a></Link>
+                <Link to="/editor" onClick={this.toggleCollapse.bind(this)}><a class="nav-link"><FaBookOpen size={30} class="text-dark"/></a></Link>
               </li>
               <li class="nav-item d-flex align-items-center">
-                <Link to="" onClick={this.toggleCollapse.bind(this)}><a class="nav-link"><FaRegEnvelope size={30} color={'#f2f2f2'}/></a></Link>
+                <Link to="" onClick={this.toggleCollapse.bind(this)}><a class="nav-link"><FaRegEnvelope size={30} class="text-dark"/></a></Link>
               </li>
               <li class="nav-item d-flex align-items-center">
-                <Link to="/" onClick={this.toggleCollapse.bind(this)}><a class="nav-link"><FaHome size={30} color={'#f2f2f2'}/></a></Link>
+                <Link to="/" onClick={this.toggleCollapse.bind(this)}><a class="nav-link"><FaHome size={30} class="text-dark"/></a></Link>
               </li>
             </ul>
           </div>
