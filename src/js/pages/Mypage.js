@@ -4,7 +4,10 @@ import DiaryList from "./DiaryList";
 
 const Mypage = () =>{
   const moveMyDiaryList = (date) =>{
-
+    let url = 'https://terminal-8c860.web.app/load?';
+    url += 'username=taisei&';
+    url += 'date='+date.replace(/-/g, '');
+    console.log(url);
   }
 
     return(

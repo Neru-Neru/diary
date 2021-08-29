@@ -156,7 +156,7 @@ const Editor = () => {
             <Movie clickEvent={getQueryStrings}></Movie>
           </div>
           <div class="row h-50 border py-3 mt-1">
-            <DescForm></DescForm>
+            <DescForm clickEvent={getQueryStrings}></DescForm>
           </div>
         </div>
       </div>

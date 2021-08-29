@@ -6,23 +6,7 @@ const Movie = (props) =>{
 
     const {clickEvent} = props;
 
-    const handleChange = (event) =>{
-        setName(event.target.value);
-        console.log(videoname);
-    }
-
-    const handleClick_dog = () =>{
-        fetch(`https://dog.ceo/api/breeds/image/random`)
-        .then(res => res.json())
-        .then(result =>{
-            console.log(result);
-            setImg(result.message);
-        }).catch(error => {
-            console.log(error);
-        });
-    }
-
-    const handleClick = () =>{
+    const handleClick = () =>{ //どうがをみるボタン
         const {elements, actions} = clickEvent();
         let url = 'https://terminal-8c860.web.app/pixi?';
         for(let i = 0; i < elements.length; i++)
@@ -32,7 +16,7 @@ const Movie = (props) =>{
             if (i < actions.length-1)
                 url += '&';
         }
-        console.log(url);
+        console.log(encodeURIComponent(url));
         //window.open(url, '_blank'); // 新しいタブを開き、ページを表示
         setUrl(url);
     }
