@@ -7,6 +7,8 @@ import Top from "./pages/Top";
 import Editor from "./pages/Editor";
 import Mypage from "./pages/Mypage";
 import MyDiary from "./pages/MyDiary";
+import OtherList from "./pages/OtherList";
+import OtherDiary from "./pages/OtherDiary";
 
 const app = document.getElementById('app');
 ReactDOM.render(
@@ -16,6 +18,8 @@ ReactDOM.render(
       <Route exact path="/editor" component={Editor}></Route>
       <Route exact path="/mypage" component={Mypage}></Route>
       <Route exact path="/mydiary" component={MyDiary}></Route>
+      <Route exact path="/otherlist" component={OtherList}></Route>
+      <Route exact path="/otherdiary" component={OtherDiary}></Route>
     </Layout>
   </Router>,
 app);

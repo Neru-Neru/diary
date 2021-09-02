@@ -3,29 +3,22 @@ import { Link, useHistory } from "react-router-dom";
 import Calendar from "./Calender";
 
 const Top = () => {
-  const history = useHistory();
-
-  const moveDiaryOfDate = (date) =>{
-    let url = 'https://terminal-8c860.web.app/load?';
-    url += 'username=taisei&';
-    url += 'date='+date.replace(/-/g, '');
-    console.log(url);
-  }
-
-  const dammy = (month) =>{}
-
   return (
         <div class="container" style={{height:"100%"}}>
 
           <div class="row h-75">
             <div class="col-md-8">
-              <Calendar clickDay={moveDiaryOfDate} clickMonthBtn={dammy}></Calendar>
+              <Link to="/editor">
+                <div class="h-100 d-flex align-items-center justify-content-center bluebell">
+                  <p class="size-30px"><i class="fas fa-book-open text-dark"></i></p>
+                </div>
+              </Link>
             </div>
 
             <div class="col-md-4">
               <div class="h-75">
                 <div class="h-100">
-                    <Link to="/editor">
+                    <Link to="/otherlist">
                         <div class="h-100 d-flex align-items-center justify-content-center bluebell">
                             <p class="size-30px"><i class="fas fa-book-open text-dark"></i></p>
                         </div>

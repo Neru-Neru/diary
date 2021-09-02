@@ -4,14 +4,6 @@ import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';impor
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 
-import sample1 from "../../img/img1.jpg";
-import sample2 from "../../img/img2.jpg";
-import sample3 from "../../img/img3.jpg";
-import sample4 from "../../img/img4.jpg";
-import sample5 from "../../img/img5.jpg";
-import sample6 from "../../img/img6.jpg";
-import sample7 from "../../img/img7.jpg";
-
 const useStyles = makeStyles((theme) =>
   createStyles({
     root: {
@@ -33,15 +25,10 @@ const useStyles = makeStyles((theme) =>
 
 const DiaryList = (props) =>{
     const classes = useStyles();
-    const history = useHistory();
-
     const imageList = props.imageList;
 
     const handleClick = (tile) =>{
-      history.push({
-        pathname: '/mydiary',
-        state: {tile}
-      });
+      props.clickTile(tile);
     }
 
     return (

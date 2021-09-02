@@ -1,28 +1,21 @@
 import React, { useState, useCallback } from "react";
 
 const MyDiary = (props) =>{
-    console.log(props.history.location);
     const arg = props.history.location.state.tile;
-
-    const displayMovie = () =>{ //どうがをみるボタン
-        let url = 'https://terminal-8c860.web.app/pixi?';
-        for(let i = 0; i < elements.length; i++)
-            url += 'element['+i+']='+elements[i]+'&';
-        for(let i = 0; i < actions.length; i++){
-            url += 'action['+i+']='+actions[i];
-            if (i < actions.length-1)
-              url += '&';
-        }
-        console.log(encodeURIComponent(url));
-        //window.open(url, '_blank'); // 新しいタブを開き、ページを表示
-        setUrl(url);
-    }
+    const src = 'https://terminal-8c860.web.app/pixi?'+'username='+arg.username+'&date='+arg.date+'&'+arg.query;
+    console.log(src);
 
     return(
-        <div>
-            <p>{arg.title}</p>
-            <p>{arg.desc}</p>
-            <p>{arg.query}</p>
+        <div class="h-100">
+            <div class="row h-75">
+                <div class="col-7">
+                    <iframe src={src} scrolling="no" width="100%" height="100%"></iframe>
+                </div>
+                <div class="col-5">
+                    <p>タイトル：{arg.title}</p>
+                    <p>せつめい：{arg.desc}</p>
+                </div>
+            </div>
         </div>
     );
 }

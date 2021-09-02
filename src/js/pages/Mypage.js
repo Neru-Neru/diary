@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import { useHistory } from 'react-router-dom';
 import Calendar from "./Calender";
 import DiaryList from "./DiaryList";
 
 const Mypage = () =>{
   const [imglist, setImagelist] = useState([]);
+
+  const history = useHistory();
 
   const moveMyDiaryList = (date) =>{
     // 日付選択したら、その動画が表示される
@@ -37,6 +40,14 @@ const Mypage = () =>{
     }
   }
 
+  const clickTile = (tile) =>{
+    console.log(tile);
+    history.push({
+      pathname: '/mydiary',
+      state: {tile}
+    });
+  }
+
   const handleJson = (json) =>{
     // jsonの処理
     let data = [];
@@ -44,13 +55,14 @@ const Mypage = () =>{
     for(let i of Object.keys(json)){
       // 各動画ごとに生成
       let tmp = {
+        'username': 'taisei',
+        'date': i,
         'title': json[i].title,
         'desc': json[i].desc,
         'query': json[i].query
       }
       data.push(tmp);
     }
-    console.log(data);
     return data;
   }
 
@@ -66,8 +78,8 @@ const Mypage = () =>{
                 </div>
               </div>
               <div class="col-8 p-2">
-                  <h3>Project</h3>
-                  <DiaryList imageList={imglist}></DiaryList>
+                  <h3>じぶんのにっき</h3>
+                  <DiaryList imageList={imglist} clickTile={clickTile}></DiaryList>
               </div>
           </div>
         </div>
