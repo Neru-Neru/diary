@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from 'react-router-dom';
 import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
@@ -30,29 +31,25 @@ const useStyles = makeStyles((theme) =>
   }),
 );
 
-const sampleImageList = [
-    { title: "Skye", img: sample1 },
-    { title: "Catherine", img: sample2 },
-    { title: "Ozo", img: sample3 },
-    { title: "Alpha", img: sample4 },
-    { title: "Kestrel", img: sample5 },
-    { title: "Krul", img: sample6 },
-    { title: "Saw", img: sample7 },
-]
-
-const DiaryList = () =>{
+const DiaryList = (props) =>{
     const classes = useStyles();
+    const history = useHistory();
+
+    const imageList = props.imageList;
 
     const handleClick = (tile) =>{
-      alert(tile.title);
+      history.push({
+        pathname: '/mydiary',
+        state: {tile}
+      });
     }
 
     return (
         <div className={classes.root}>
           <GridList autoHeight cellHeight={300} className={classes.gridList} cols={3}>
-            {sampleImageList.map((tile) => (
+            {imageList.map((tile) => (
               <GridListTile key={tile.img} cols={tile.cols || 1} onClick={() => {handleClick(tile)}}>
-                <img src={tile.img} alt={tile.title}/>
+                {/*<img src={tile.img} alt={tile.title}/>*/}
                 <GridListTileBar
                   title={tile.title}
                 />

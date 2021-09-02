@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const DescForm = (props) =>{
     const [title, setTitle] = useState("");
-    const [description, setDescription] = useState("");
+    const [desc, setDesc] = useState("");
 
     const {clickEvent} = props;
 
@@ -11,12 +11,13 @@ const DescForm = (props) =>{
         console.log(title);
     }
 
-    const changeDescription = (event) =>{
-        setDescription(event.target.value);
+    const changeDesc = (event) =>{
+        setDesc(event.target.value);
         console.log(title);
     }
 
-    const handleClick = (FormData) => { //にっきをかくボタン
+    const handleClick = (FormData) => {
+        //にっきをかくボタン
         const {elements, actions} = clickEvent();
         let url = 'https://terminal-8c860.web.app/save?';
 
@@ -26,7 +27,7 @@ const DescForm = (props) =>{
         var year = today.getFullYear();
         var month = ("00" + (today.getMonth()+1)).slice(-2);
         var date = ("00" + today.getDate()).slice(-2);
-        url += 'date='+year+month+date+'&query='
+        url += 'date='+year+'-'+month+'-'+date+'&query='
 
         let query = '';
         for(let i = 0; i < elements.length; i++)
@@ -38,9 +39,10 @@ const DescForm = (props) =>{
         }
         url += encodeURIComponent(query);
 
-        url += '&title=' + title + '&description=' + description;
+        url += '&title=' + title + '&desc=' + desc;
         console.log(url);
-        //window.open(url, '_blank'); // 新しいタブを開き、ページを表示
+        window.open(url, '_blank'); // 新しいタブを開き、ページを表示
+        //window.close();
         //setUrl(url);
     }
 
@@ -53,8 +55,8 @@ const DescForm = (props) =>{
                     <input class="form-control" id="title" type="text" value={title} onChange={changeTitle} autocomplete="off" required></input>
                 </div>
                 <div class="mb-3">
-                    <label class="control-label" for="description">せつめい</label>
-                    <textarea class="form-control" id="description" value={description} onChange={changeDescription} style={{resize:"none", height:"10em"}} autocomplete="off" required></textarea>
+                    <label class="control-label" for="desc">せつめい</label>
+                    <textarea class="form-control" id="desc" value={desc} onChange={changeDesc} style={{resize:"none", height:"10em"}} autocomplete="off" required></textarea>
                 </div>
                 <div class="d-grid gap-2 col-6 mx-auto">
                     <button type="button" class="btn btn-secondary" onClick={handleClick}>にっきをかく</button>

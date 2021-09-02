@@ -6,6 +6,7 @@ import Layout from "./pages/Layout";
 import Top from "./pages/Top";
 import Editor from "./pages/Editor";
 import Mypage from "./pages/Mypage";
+import MyDiary from "./pages/MyDiary";
 
 const app = document.getElementById('app');
 ReactDOM.render(
@@ -14,6 +15,7 @@ ReactDOM.render(
       <Route exact path="/" component={Top}></Route>
       <Route exact path="/editor" component={Editor}></Route>
       <Route exact path="/mypage" component={Mypage}></Route>
+      <Route exact path="/mydiary" component={MyDiary}></Route>
     </Layout>
   </Router>,
 app);

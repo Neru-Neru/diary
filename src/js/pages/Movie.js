@@ -9,14 +9,24 @@ const Movie = (props) =>{
     const handleClick = () =>{ //どうがをみるボタン
         const {elements, actions} = clickEvent();
         let url = 'https://terminal-8c860.web.app/pixi?';
-        for(let i = 0; i < elements.length; i++)
-            url += 'element['+i+']='+elements[i]+'&';
-        for(let i = 0; i < actions.length; i++){
-            url += 'action['+i+']='+actions[i];
-            if (i < actions.length-1)
-              url += '&';
+
+        url += 'username=taisei&';
+
+        var today = new Date();
+        var year = today.getFullYear();
+        var month = ("00" + (today.getMonth()+1)).slice(-2);
+        var date = ("00" + today.getDate()).slice(-2);
+        url += 'date='+year+'-'+month+'-'+date+'&'
+
+        let query = '';
+        for(let i = 0; i < actions.length; i++)
+            query += 'action['+i+']='+actions[i]+'&';
+        for(let i = 0; i < elements.length; i++){
+            query += 'element['+i+']='+elements[i];
+            if (i < elements.length-1)
+                query += '&';
         }
-        console.log(encodeURIComponent(url));
+        url += query;
         //window.open(url, '_blank'); // 新しいタブを開き、ページを表示
         setUrl(url);
     }

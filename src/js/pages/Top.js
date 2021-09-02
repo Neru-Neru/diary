@@ -12,12 +12,14 @@ const Top = () => {
     console.log(url);
   }
 
+  const dammy = (month) =>{}
+
   return (
         <div class="container" style={{height:"100%"}}>
 
           <div class="row h-75">
             <div class="col-md-8">
-              <Calendar onClick={moveDiaryOfDate}></Calendar>
+              <Calendar clickDay={moveDiaryOfDate} clickMonthBtn={dammy}></Calendar>
             </div>
 
             <div class="col-md-4">
