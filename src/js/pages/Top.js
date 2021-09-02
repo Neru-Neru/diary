@@ -20,7 +20,7 @@ const Top = () => {
                 <div class="h-100">
                     <Link to="/otherlist">
                         <div class="h-100 d-flex align-items-center justify-content-center bluebell">
-                            <p class="size-30px"><i class="fas fa-user-friends"></i></p>
+                            <p class="size-30px"><i class="fas fa-user-friends text-dark"></i></p>
                         </div>
                     </Link>
                 </div>
