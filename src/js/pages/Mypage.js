@@ -10,7 +10,7 @@ const Mypage = () =>{
 
   const moveMyDiaryList = (date) =>{
     // 日付選択したら、その動画が表示される
-    let url = 'https://terminal-8c860.web.app/load?';
+    let url = 'https://terminal-8c860.web.app/load-day?';
     url += 'username=taisei&';
     url += 'date='+date;
     console.log(url);
@@ -74,7 +74,7 @@ const Mypage = () =>{
                   なまえ：
                 </div>
                 <div class="h-75">
-                  <Calendar clickMonthBtn={moveMonth} clickDay={moveMyDiaryList}></Calendar>
+                  <Calendar clickMonthBtn={moveMonth} clickDay={moveMyDiaryList} setImagelist={setImagelist}></Calendar>
                 </div>
               </div>
               <div class="col-6 p-2">
