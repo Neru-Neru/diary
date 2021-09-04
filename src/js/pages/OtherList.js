@@ -70,10 +70,10 @@ const OtherList = (props) =>{
     return(
         <div class="container" style={{height:"90%"}}>
           <div class="row">
-              <div class="col-4 p-2">
+              <div class="col-6 p-2">
                   <Calendar clickMonthBtn={dammy} clickDay={moveDiaryOfDate}></Calendar>
               </div>
-              <div class="col-8 p-2">
+              <div class="col-6 p-2">
                   <h3>みんなのにっき（{date}）</h3>
                   <DiaryList imageList={imglist} clickTile={clickTile}></DiaryList>
               </div>

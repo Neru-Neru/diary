@@ -33,11 +33,12 @@ const Movie = (props) =>{
 
     return(
     <div>
-      <div class="h-75 border">
+      <h5>どうが</h5>
+      <div class="h-75 border bg-light">
         <iframe src={url} scrolling="no" width="100%" height="100%"></iframe>
       </div>
       <div class="d-grid gap-2 col-6 mx-auto mt-3">
-        <button type="button" class="btn btn-secondary" onClick={handleClick}>動画を見る</button>
+        <button type="button" class="btn btn-secondary" onClick={handleClick}>どうがをみる</button>
       </div>
     </div>
     );

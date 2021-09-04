@@ -69,7 +69,7 @@ const Mypage = () =>{
     return(
         <div class="container" style={{height:"90%"}}>
           <div class="row">
-              <div class="col-4 p-2">
+              <div class="col-6 p-2">
                 <div class="h-25">
                   なまえ：
                 </div>
@@ -77,7 +77,7 @@ const Mypage = () =>{
                   <Calendar clickMonthBtn={moveMonth} clickDay={moveMyDiaryList}></Calendar>
                 </div>
               </div>
-              <div class="col-8 p-2">
+              <div class="col-6 p-2">
                   <h3>じぶんのにっき</h3>
                   <DiaryList imageList={imglist} clickTile={clickTile}></DiaryList>
               </div>

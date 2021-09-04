@@ -32,7 +32,7 @@ const DiaryList = (props) =>{
     }
 
     return (
-        <div className={classes.root}>
+        <div className={classes.root} class="p-2">
           <GridList autoHeight cellHeight={300} className={classes.gridList} cols={3}>
             {imageList.map((tile) => (
               <GridListTile key={tile.img} cols={tile.cols || 1} onClick={() => {handleClick(tile)}}>
