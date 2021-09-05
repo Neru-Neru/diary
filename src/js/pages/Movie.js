@@ -1,47 +1,48 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 
-const Movie = (props) =>{
-    const [img, setImg] = useState("");
-    const [url, setUrl] = useState("");
+const Movie = (props) => {
+  const [url, setUrl] = useState('');
 
-    const {clickEvent} = props;
+  const { clickEvent, handleDisplay, hideDescBtn } = props;
 
-    const handleClick = () =>{ //どうがをみるボタン
-        const {elements, actions} = clickEvent();
-        let url = 'https://terminal-8c860.web.app/pixi?';
+  const handleClick = () => {
+    //どうがをみるボタン
+    hideDescBtn();
+    const { elements, actions } = clickEvent();
+    let url = 'https://terminal-8c860.web.app/pixi?';
+    url += 'username=taisei&';
 
-        url += 'username=taisei&';
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = ('00' + (today.getMonth() + 1)).slice(-2);
+    const date = ('00' + today.getDate()).slice(-2);
+    url += 'date=' + year + '-' + month + '-' + date + '&';
 
-        var today = new Date();
-        var year = today.getFullYear();
-        var month = ("00" + (today.getMonth()+1)).slice(-2);
-        var date = ("00" + today.getDate()).slice(-2);
-        url += 'date='+year+'-'+month+'-'+date+'&'
-
-        let query = '';
-        for(let i = 0; i < actions.length; i++)
-            query += 'action['+i+']='+actions[i]+'&';
-        for(let i = 0; i < elements.length; i++){
-            query += 'element['+i+']='+elements[i];
-            if (i < elements.length-1)
-                query += '&';
-        }
-        url += query;
-        //window.open(url, '_blank'); // 新しいタブを開き、ページを表示
-        setUrl(url);
+    let query = '';
+    for (let i = 0; i < actions.length; i++) query += 'action[' + i + ']=' + actions[i] + '&';
+    for (let i = 0; i < elements.length; i++) {
+      query += 'element[' + i + ']=' + elements[i];
+      if (i < elements.length - 1) query += '&';
     }
+    url += query;
+    //window.open(url, '_blank'); // 新しいタブを開き、ページを表示
+    setUrl(url);
+    handleDisplay();
+  };
 
-    return(
+  return (
     <div>
       <h5>どうが</h5>
       <div class="h-75 border bg-light">
-        <iframe src={url} scrolling="no" width="100%" height="100%"></iframe>
+        <iframe src={url} id="iframe" scrolling="no" width="100%" height="100%"></iframe>
       </div>
       <div class="d-grid gap-2 col-6 mx-auto mt-3">
-        <button type="button" class="btn btn-secondary" onClick={handleClick}>どうがをみる</button>
+        <button type="button" class="btn btn-secondary" onClick={handleClick}>
+          どうがをみる
+        </button>
       </div>
     </div>
-    );
-}
+  );
+};
 
 export default Movie;

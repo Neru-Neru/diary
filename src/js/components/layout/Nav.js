@@ -1,42 +1,60 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { FaUserAlt, FaBookOpen, FaRegEnvelope, FaHome } from "react-icons/fa"
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { FaUserAlt, FaBookOpen, FaRegEnvelope, FaHome } from 'react-icons/fa';
 
 export default class Nav extends React.Component {
   constructor() {
     super();
     this.state = {
-      collapsed: true
+      collapsed: true,
     };
   }
   toggleCollapse() {
     const collapsed = !this.state.collapsed;
-    this.setState({collapsed});
+    this.setState({ collapsed });
   }
   render() {
     const { location } = this.props;
     const { collapsed } = this.state;
     return (
-    <nav class="navbar navbar-expand fixed-top bluebell p-3" role="navigation">
+      <nav class="navbar navbar-expand fixed-top bluebell p-3" role="navigation">
         <div class="container">
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <Link to="/" onClick={this.toggleCollapse.bind(this)} class="text-decoration-none"><a class="navbar-brand gray-char text-dark">海街Diary</a></Link>
+                <Link to="/" onClick={this.toggleCollapse.bind(this)} class="text-decoration-none">
+                  <a class="navbar-brand gray-char text-dark">海街Diary</a>
+                </Link>
               </li>
             </ul>
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <Link to="/mypage" onClick={this.toggleCollapse.bind(this)}><a class="nav-link"><FaUserAlt size={25} class="text-dark"/></a></Link>
+                <Link to="/mypage" onClick={this.toggleCollapse.bind(this)}>
+                  <a class="nav-link">
+                    <FaUserAlt size={25} class="text-dark" />
+                  </a>
+                </Link>
               </li>
               <li class="nav-item d-flex align-items-center">
-                <Link to="/editor" onClick={this.toggleCollapse.bind(this)}><a class="nav-link"><FaBookOpen size={30} class="text-dark"/></a></Link>
+                <Link to="/editor" onClick={this.toggleCollapse.bind(this)}>
+                  <a class="nav-link">
+                    <FaBookOpen size={30} class="text-dark" />
+                  </a>
+                </Link>
               </li>
               <li class="nav-item d-flex align-items-center">
-                <Link to="" onClick={this.toggleCollapse.bind(this)}><a class="nav-link"><FaRegEnvelope size={30} class="text-dark"/></a></Link>
+                <Link to="" onClick={this.toggleCollapse.bind(this)}>
+                  <a class="nav-link">
+                    <FaRegEnvelope size={30} class="text-dark" />
+                  </a>
+                </Link>
               </li>
               <li class="nav-item d-flex align-items-center">
-                <Link to="/" onClick={this.toggleCollapse.bind(this)}><a class="nav-link"><FaHome size={30} class="text-dark"/></a></Link>
+                <Link to="/" onClick={this.toggleCollapse.bind(this)}>
+                  <a class="nav-link">
+                    <FaHome size={30} class="text-dark" />
+                  </a>
+                </Link>
               </li>
             </ul>
           </div>

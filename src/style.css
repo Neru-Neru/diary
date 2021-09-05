@@ -1,67 +1,67 @@
 @import url('https://fonts.googleapis.com/css2?family=Kaisei+Opti&family=Rampart+One&display=swap');
 
-body{
-    height: 100%;
-    margin:0;
-    padding-top: 6rem;
-    background: #f2f2f2;
-    font-family: 'Kaisei Opti', serif;
+body {
+  height: 100%;
+  margin: 0;
+  padding-top: 6rem;
+  background: #f2f2f2;
+  font-family: 'Kaisei Opti', serif;
 }
 
-.rampart{
-    font-family: 'Rampart One', cursive;
+.rampart {
+  font-family: 'Rampart One', cursive;
 }
 
-html{
-    height: 100%;
+html {
+  height: 100%;
 }
 
-pre{
-    white-space:pre-wrap;
-    white-space:-moz-pre-wrap;
-    white-space:-o-pre-wrap;
-    white-space:-pre-wrap;
-    word-wrap:break-word;
+pre {
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -o-pre-wrap;
+  white-space: -pre-wrap;
+  word-wrap: break-word;
 }
-.font-awesome{
-    padding:0;
-}
-
-.bluebell{
-    background-color: #aec8e6;
+.font-awesome {
+  padding: 0;
 }
 
-.gray-char{
-    color:#f2f2f2;
+.bluebell {
+  background-color: #aec8e6;
 }
 
-.mid-font{
-    text-align: center;
-    line-height: 100%;
+.gray-char {
+  color: #f2f2f2;
 }
 
-.size-30px{
-    font-size: 30px;
+.mid-font {
+  text-align: center;
+  line-height: 100%;
 }
 
-.fc a{
-    color: black;
-    text-decoration: none;
-}
-.fc-day-sat a{
-    color: blue!important;
-}
-.fc-day-sun a{
-    color: red!important;
-}
-.fc-h-event{
-    text-align: center;
-    line-height: 100%;
-    background-color: #f2f2f2!important;
-    border: none!important;
+.size-30px {
+  font-size: 30px;
 }
 
-.fc-h-event .fc-event-main{
-    color: rgba(255, 202, 103, 0.973)!important;
-    font-size: 30px;
+.fc a {
+  color: black;
+  text-decoration: none;
+}
+.fc-day-sat a {
+  color: blue !important;
+}
+.fc-day-sun a {
+  color: red !important;
+}
+.fc-h-event {
+  text-align: center;
+  line-height: 100%;
+  background-color: #f2f2f2 !important;
+  border: none !important;
+}
+
+.fc-h-event .fc-event-main {
+  color: rgba(255, 202, 103, 0.973) !important;
+  font-size: 30px;
 }
