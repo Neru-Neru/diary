@@ -23,7 +23,7 @@ export default class Nav extends React.Component {
             <ul class="navbar-nav">
               <li class="nav-item">
                 <Link to="/" onClick={this.toggleCollapse.bind(this)} class="text-decoration-none">
-                  <a class="navbar-brand gray-char text-dark">海街Diary</a>
+                  <a class="navbar-brand gray-char text-dark">ぶろっこりー</a>
                 </Link>
               </li>
             </ul>

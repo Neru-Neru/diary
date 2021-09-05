@@ -29,7 +29,8 @@ const Calendar = (props) => {
     const year = day.getFullYear();
     const month = day.getMonth() + 1;
     setYearMonth(year + '-' + month);
-    if (year + '-' + month) {
+    console.log(yearmonth);
+    if (yearmonth != year + '-' + month) {
       let url = 'https://terminal-8c860.web.app/load-month?';
       url += 'username=taisei&';
       url += 'month=' + year + '-' + month;

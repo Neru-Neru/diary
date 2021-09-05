@@ -13,7 +13,6 @@ const Mypage = () => {
     let url = 'https://terminal-8c860.web.app/load-day?';
     url += 'username=taisei&';
     url += 'date=' + date;
-    console.log(url);
   };
 
   const moveMonth = (month) => {
@@ -22,7 +21,6 @@ const Mypage = () => {
       let url = 'https://terminal-8c860.web.app/load-month?';
       url += 'username=taisei&';
       url += 'month=' + month;
-      console.log(url);
       fetch(url, {
         mode: 'cors',
       })
@@ -60,24 +58,28 @@ const Mypage = () => {
 
   const addThumbnail = (list) => {
     // サムネイル追加
-    /*for(let elem of list){
-      let url = "https://terminal-8c860.web.app/send-thumbnail?";
-      url += "username=" + elem.username + "&";
-      url += "date=" + elem.date;
+    for (let elem of list) {
+      let url = 'https://terminal-8c860.web.app/send-thumbnail?';
+      url += 'username=' + elem.username + '&';
+      url += 'date=' + elem.date;
+      /*
       fetch(url, {
-        mode: 'cors'
+        mode: 'cors',
       })
-      .then(function (data){
-        console.log(data);
-        return data.json();
-      })
-      .then(function (json){
-        console.log(json);
-      })
-      .catch((e) => {
-        console.log(e) // エラーをキャッチし表示
-      })
-    }*/
+        .then(function (data) {
+          console.log(data);
+          return data.blob(); //バイナリデータに変換
+        })
+        .then(function (blob) {
+          elem.img = URL.createObjectURL(blob); // Data URI発行
+          console.log(elem.img);
+        })
+        .catch((e) => {
+          console.log(e); // エラーをキャッチし表示
+        });
+        */
+      elem.img = url;
+    }
     return list;
   };
 
@@ -93,13 +95,13 @@ const Mypage = () => {
   return (
     <div class="container" style={{ height: '90%' }}>
       <div class="row">
-        <div class="col-6 p-2">
+        <div class="col-5 p-2">
           <div class="h-25">なまえ：</div>
           <div class="h-75">
             <Calendar clickMonthBtn={moveMonth} clickDay={moveMyDiaryList} setImagelist={setImagelist}></Calendar>
           </div>
         </div>
-        <div class="col-6 p-2">
+        <div class="col-7 p-2">
           <h3>じぶんのにっき</h3>
           <DiaryList imageList={imglist} clickTile={clickTile}></DiaryList>
         </div>
