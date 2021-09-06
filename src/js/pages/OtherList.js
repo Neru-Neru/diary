@@ -3,9 +3,10 @@ import { useHistory } from 'react-router-dom';
 import Calendar from './Calender';
 import DiaryList from './DiaryList';
 
-const OtherList = (props) => {
+const OtherList = () => {
   const [date, setDate] = useState();
   const [imglist, setImagelist] = useState([]);
+  const [daylist, setDaylist] = useState([]);
 
   const history = useHistory();
 
@@ -14,12 +15,10 @@ const OtherList = (props) => {
     var year = today.getFullYear();
     var month = ('00' + (today.getMonth() + 1)).slice(-2);
     var day = ('00' + today.getDate()).slice(-2);
-    setDate(year + '-' + month + '-' + day);
     moveDiaryOfDate(year + '-' + month + '-' + day);
   }, []);
 
   const moveDiaryOfDate = (date) => {
-    setDate(date);
     let url = 'https://terminal-8c860.web.app/load-day?';
     url += 'date=' + date;
     console.log(url);
@@ -36,13 +35,7 @@ const OtherList = (props) => {
       .catch((e) => {
         console.log(e); // エラーをキャッチし表示
       });
-    history.push({
-      path: '/otherdiary',
-      state: { imglist },
-    });
   };
-
-  const dammy = (month) => {};
 
   const handleJson = (json) => {
     // jsonの処理
@@ -71,10 +64,10 @@ const OtherList = (props) => {
     <div class="container" style={{ height: '90%' }}>
       <div class="row">
         <div class="col-5 p-2">
-          <Calendar clickMonthBtn={dammy} clickDay={moveDiaryOfDate}></Calendar>
+          <Calendar clickDay={moveDiaryOfDate} imageList={imglist} setImagelist={setImagelist}></Calendar>
         </div>
         <div class="col-7 p-2">
-          <h3>みんなのにっき（{date}）</h3>
+          <h3>みんなのにっき</h3>
           <DiaryList imageList={imglist} clickTile={clickTile}></DiaryList>
         </div>
       </div>

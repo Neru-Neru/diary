@@ -14,7 +14,6 @@ const Calendar = (props) => {
       props.clickDay(arg.dateStr);
     } else {
       let input = arg.event._instance.range.start;
-      //let date = JSON.stringify(input).split('T')[0];
       let today = new Date(JSON.stringify(input).split('T')[0].replace(/\"/g, '""'));
       var year = today.getFullYear();
       var month = ('00' + (today.getMonth() + 1)).slice(-2);
@@ -23,46 +22,64 @@ const Calendar = (props) => {
     }
   };
 
-  const getMonthData = (fetchInfo, successCallback, failureCallback) => {
+  const getMonthData = async (fetchInfo, successCallback, failureCallback) => {
     // 対象月の動画データを取得する
     const day = new Date(fetchInfo.start);
     const year = day.getFullYear();
     const month = day.getMonth() + 1;
     setYearMonth(year + '-' + month);
-    console.log(yearmonth);
-    if (yearmonth != year + '-' + month) {
+    if (yearmonth === year + '-' + month) {
       let url = 'https://terminal-8c860.web.app/load-month?';
       url += 'username=taisei&';
       url += 'month=' + year + '-' + month;
       console.log(url);
-      var events = [];
-      fetch(url, {
+      return fetch(url, {
         mode: 'cors',
       })
         .then(function (data) {
           return data.json();
         })
         .then(function (json) {
-          for (let i of Object.keys(json)) {
-            // 各動画ごとに生成
-            let tmp = {
-              start: i,
-              icon: 'smile',
-            };
-            events.push(tmp);
-          }
-          successCallback(events);
+          return json;
         })
-        .catch((e) => {
+        .catch(function (e) {
           console.log(e); // エラーをキャッチし表示
         });
     }
+    return new Promise((success, fault) => {});
   };
 
-  useEffect(() => {
-    // 年月が変更された時だけ表示タイルを変更する
-    props.clickMonthBtn(yearmonth);
-  }, [yearmonth]);
+  const handleJson = (json) => {
+    // jsonの処理（moveMonthで使用）
+    let data = [];
+    for (let i of Object.keys(json)) {
+      // 各動画ごとに生成
+      let tmp = {
+        username: 'taisei',
+        date: i,
+        title: json[i].title,
+        desc: json[i].desc,
+        query: json[i].query,
+      };
+      data.push(tmp);
+    }
+    return data;
+  };
+
+  const getEvents = (json) => {
+    const events = [];
+    for (let i of Object.keys(json)) {
+      // 各動画ごとに生成
+      let tmp = {
+        start: i,
+        icon: 'smile',
+      };
+      events.push(tmp);
+    }
+    return events;
+  };
+
+  useEffect(() => {}, [yearmonth]);
 
   return (
     <FullCalendar
@@ -74,9 +91,17 @@ const Calendar = (props) => {
       dateClick={handleClick}
       eventClick={handleClick}
       showNonCurrentDates={false}
-      events={(fetchInfo, successCallback, failureCallback) =>
-        getMonthData(fetchInfo, successCallback, failureCallback)
-      }
+      events={async (fetchInfo, successCallback, failureCallback) => {
+        const data = await getMonthData(fetchInfo, successCallback, failureCallback);
+        const newEvent = getEvents(data);
+        if (newEvent.length > 0) {
+          successCallback(newEvent);
+          const newList = handleJson(data);
+          if (props.imageList.length == 0 || newList[0].date != props.imageList[0].date) {
+            props.setImagelist(newList);
+          }
+        }
+      }}
       eventContent={function (arg, createElement) {
         if (arg.event._def.extendedProps.icon) {
           var classname = 'fa fa-' + arg.event._def.extendedProps.icon;
@@ -84,7 +109,6 @@ const Calendar = (props) => {
           return elm;
         }
       }}
-      color="red"
       forceEventDuration={true}
       eventTimeFormat={{
         hour: 'numeric',

@@ -14,7 +14,7 @@ module.exports = {
           {
             loader: 'babel-loader',
             options: {
-              plugins: ['react-html-attrs'],
+              plugins: ['react-html-attrs', '@babel/plugin-transform-runtime'],
               presets: ['@babel/preset-react', '@babel/preset-env'],
             },
           },

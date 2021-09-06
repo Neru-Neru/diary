@@ -43,7 +43,7 @@ const DiaryList = (props) => {
               handleClick(tile);
             }}
           >
-            {<img src={tile.img} alt={tile.title} />}
+            {/*<img src={tile.img} alt={tile.title} />*/}
             <GridListTileBar title={tile.title} />
           </GridListTile>
         ))}

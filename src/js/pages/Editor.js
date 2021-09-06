@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import Blockly from 'blockly';
 import { BlocklyWorkspace } from 'react-blockly';
@@ -172,20 +172,26 @@ const Editor = () => {
   const checkDouwnloadLink = () => {
     const iframe = document.getElementById('iframe');
     // ダウンロードリンクの探索
+    var time = 0;
     const intervalId = setInterval(() => {
       console.log('Not exist');
       if (iframe.contentWindow.document.querySelector('#downloadlink') != null) {
+        //if (time > 7) {
         console.log('Exist');
         clearInterval(intervalId); //intervalIdをclearIntervalで指定している
+        document.getElementById('after_download').style.display = 'block';
       }
     }, 1000);
-    document.getElementById('after_download').style.display = 'block';
   };
 
   const hideDescBtn = () => {
     console.log('Hide');
     document.getElementById('after_download').style.display = 'none';
   };
+
+  useEffect(() => {
+    document.getElementById('after_download').style.display = 'none';
+  }, [xml]);
 
   return (
     <div class="container" style={{ height: '90%' }}>
@@ -215,7 +221,7 @@ const Editor = () => {
           <div class="row h-50 border py-3">
             <Movie clickEvent={getQueryStrings} handleDisplay={checkDouwnloadLink} hideDescBtn={hideDescBtn}></Movie>
           </div>
-          <div class="row h-25 border py-3 mt-1 d-none" id="after_download">
+          <div class="row h-25 border py-3 mt-1" id="after_download">
             <p>
               このどうがでいいなら、つぎにしょうさいをきめてね。<br></br>へんこうするなら、ブロックをそうさしてね。
             </p>
