@@ -24,9 +24,7 @@ const Mypage = () => {
     });
   };
 
-  useEffect(() => {
-    console.log('SDF');
-  }, [imglist]);
+  useEffect(() => {}, [imglist]);
 
   return (
     <div class="container" style={{ height: '90%' }}>

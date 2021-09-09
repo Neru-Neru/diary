@@ -65,3 +65,8 @@ pre {
   color: rgba(255, 202, 103, 0.973) !important;
   font-size: 30px;
 }
+.fc-day-future,
+.fc-day-past,
+.fc-day-today {
+  cursor: pointer;
+}

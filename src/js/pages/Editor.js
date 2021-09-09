@@ -175,8 +175,9 @@ const Editor = () => {
     var time = 0;
     const intervalId = setInterval(() => {
       console.log('Not exist');
-      if (iframe.contentWindow.document.querySelector('#downloadlink') != null) {
-        //if (time > 7) {
+      //if (iframe.contentWindow.document.querySelector('#downloadlink') != null) {
+      time++;
+      if (time > 7) {
         console.log('Exist');
         clearInterval(intervalId); //intervalIdをclearIntervalで指定している
         document.getElementById('after_download').style.display = 'block';

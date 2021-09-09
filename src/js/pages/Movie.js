@@ -26,7 +26,7 @@ const Movie = (props) => {
     }
     url += query;
     //window.open(url, '_blank'); // 新しいタブを開き、ページを表示
-    setUrl(url);
+    setUrl(url + '&' + today.getTime());
     handleDisplay();
   };
 
@@ -34,7 +34,13 @@ const Movie = (props) => {
     <div>
       <h5>どうが</h5>
       <div class="h-75 border bg-light">
-        <iframe src={url} id="iframe" scrolling="no" width="100%" height="100%"></iframe>
+        <iframe
+          src={url.substring(0, url.lastIndexOf('&'))}
+          id="iframe"
+          scrolling="no"
+          width="100%"
+          height="100%"
+        ></iframe>
       </div>
       <div class="d-grid gap-2 col-6 mx-auto mt-3">
         <button type="button" class="btn btn-secondary" onClick={handleClick}>

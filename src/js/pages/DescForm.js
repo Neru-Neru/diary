@@ -55,11 +55,12 @@ const DescForm = (props) => {
   console.log(url);
 
   return (
-    <div class="row h-100">
-      <div class="col-6">
-        <iframe src={url} scrolling="no" width="100%" height="100%"></iframe>
+    <div>
+      <div class="h-50">
+        {/*<iframe src={url} scrolling="no" width="100%" height="100%"></iframe>*/}
+        <iframe src="http://127.0.0.1:5500/make_thumbnail.html" scrolling="no" width="100%" height="470px"></iframe>
       </div>
-      <div class="col-6">
+      <div class="h-50">
         <h5>くわしいこと</h5>
         <form>
           <div class="mb-3">

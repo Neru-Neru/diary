@@ -11,12 +11,15 @@ const OtherList = () => {
   const history = useHistory();
 
   useEffect(() => {
+    /*
     var today = new Date();
     var year = today.getFullYear();
     var month = ('00' + (today.getMonth() + 1)).slice(-2);
     var day = ('00' + today.getDate()).slice(-2);
     moveDiaryOfDate(year + '-' + month + '-' + day);
-  }, []);
+    */
+    setDaylist(imglist);
+  }, [imglist]);
 
   const moveDiaryOfDate = (date) => {
     let url = 'https://terminal-8c860.web.app/load-day?';
@@ -29,8 +32,8 @@ const OtherList = () => {
         return data.json();
       })
       .then(function (json) {
-        const newlist = handleJson(json); // jsonの処理をする
-        setImagelist(newlist); // stateを変更
+        const daylist = handleJson(json); // jsonの処理をする
+        setDaylist(daylist); // stateを変更
       })
       .catch((e) => {
         console.log(e); // エラーをキャッチし表示
@@ -68,7 +71,7 @@ const OtherList = () => {
         </div>
         <div class="col-7 p-2">
           <h3>みんなのにっき</h3>
-          <DiaryList imageList={imglist} clickTile={clickTile}></DiaryList>
+          <DiaryList imageList={daylist} clickTile={clickTile}></DiaryList>
         </div>
       </div>
     </div>
