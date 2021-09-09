@@ -5,6 +5,7 @@ import DiaryList from './DiaryList';
 
 const Mypage = () => {
   const [imglist, setImagelist] = useState([]);
+  const [daylist, setDaylist] = useState([]);
 
   const history = useHistory();
 
@@ -13,6 +14,35 @@ const Mypage = () => {
     let url = 'https://terminal-8c860.web.app/load-day?';
     url += 'username=taisei&';
     url += 'date=' + date;
+    fetch(url, {
+      mode: 'cors',
+    })
+      .then(function (data) {
+        return data.json();
+      })
+      .then(function (json) {
+        const daylist = handleJson(json); // jsonの処理をする
+        setDaylist(daylist); // stateを変更
+      })
+      .catch((e) => {
+        console.log(e); // エラーをキャッチし表示
+      });
+  };
+
+  const handleJson = (json) => {
+    // jsonの処理
+    let data = [];
+    console.log(json);
+    for (let i of Object.keys(json)) {
+      // 各動画ごとに生成
+      let tmp = {
+        title: json[i].title,
+        desc: json[i].desc,
+        query: json[i].query,
+      };
+      data.push(tmp);
+    }
+    return data;
   };
 
   const clickTile = (tile) => {
@@ -24,7 +54,9 @@ const Mypage = () => {
     });
   };
 
-  useEffect(() => {}, [imglist]);
+  useEffect(() => {
+    setDaylist(imglist);
+  }, [imglist]);
 
   return (
     <div class="container" style={{ height: '90%' }}>
@@ -37,7 +69,7 @@ const Mypage = () => {
         </div>
         <div class="col-7 p-2">
           <h3>じぶんのにっき</h3>
-          <DiaryList imageList={imglist} clickTile={clickTile}></DiaryList>
+          <DiaryList imageList={daylist} clickTile={clickTile}></DiaryList>
         </div>
       </div>
     </div>

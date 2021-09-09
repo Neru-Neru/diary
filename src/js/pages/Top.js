@@ -29,28 +29,26 @@ const Top = () => {
             </div>
           </div>
 
-          <div class="h-25" style={{ padding: '1em 0 0 0' }}>
-            <div class="container h-100" style={{ padding: '0' }}>
-              <div class="row h-100">
-                <div class="col-md-6">
-                  <Link to="/">
-                    <div class="h-100 d-flex align-items-center justify-content-center bluebell">
-                      <p class="size-30px">
-                        <i class="fas fa-envelope-open-text text-dark"></i>
-                      </p>
-                    </div>
-                  </Link>
-                </div>
+          <div class="h-25 pt-2">
+            <div class="row h-100">
+              <div class="col-md-6">
+                <Link to="/news">
+                  <div class="h-100 d-flex align-items-center justify-content-center bluebell">
+                    <p class="size-30px">
+                      <i class="fas fa-envelope-open-text text-dark"></i>
+                    </p>
+                  </div>
+                </Link>
+              </div>
 
-                <div class="col-md-6">
-                  <Link to="/mypage">
-                    <div class="h-100 d-flex align-items-center justify-content-center bluebell">
-                      <p class="size-30px">
-                        <i class="fas fa-user text-dark"></i>
-                      </p>
-                    </div>
-                  </Link>
-                </div>
+              <div class="col-md-6">
+                <Link to="/mypage">
+                  <div class="h-100 d-flex align-items-center justify-content-center bluebell">
+                    <p class="size-30px">
+                      <i class="fas fa-user text-dark"></i>
+                    </p>
+                  </div>
+                </Link>
               </div>
             </div>
           </div>

@@ -1,22 +1,35 @@
 import React, { useEffect } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import { act_dic } from '../components/blocks/act_dic';
+import { ele_dic } from '../components/blocks/ele_dict';
 
 const MyDiary = (props) => {
   const arg = props.history.location.state.tile;
   const src =
     'https://terminal-8c860.web.app/pixi?' + 'username=' + arg.username + '&date=' + arg.date + '&' + arg.query;
-  console.log(arg.query);
+  // クエリの処理
   let ans = '';
+  let act = [];
+  let ele = [];
+  let flg = true;
   const queryList = arg.query.split('&');
   for (const elem of queryList) {
     const block = elem.split('=');
-    console.log(block[0]);
-    if (block[0] == 'action') {
-      ans += 'action' + block[1];
+    if (block[0].match(/^a/g)) {
+      act.push(act_dic[block[1]]);
+      if (flg) {
+        ele.push('');
+        flg = !flg;
+      }
+      flg = !flg;
     } else {
-      ans += 'element' + block[1];
+      ele.push(ele_dic[block[1]]);
+      flg = !flg;
     }
+  }
+  for (let i = 0; i < act.length; i++) {
+    ans += ele[i] + act[i];
   }
   console.log(ans);
 
@@ -24,7 +37,7 @@ const MyDiary = (props) => {
     <div class="h-100">
       <div class="row py-5">
         <div class="col-7">
-          <Tabs>
+          <Tabs indicatorColor="primary" textColor="primary" centered>
             <TabList>
               <Tab>どうが</Tab>
               <Tab>にっき</Tab>
