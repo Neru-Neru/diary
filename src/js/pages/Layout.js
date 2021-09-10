@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import Nav from '../components/layout/Nav';
 import Footer from '../components/layout/Footer';
+import { AuthProvider } from '../../context/AuthContext';
 
 class Layout extends React.Component {
   navigate() {
@@ -12,7 +13,7 @@ class Layout extends React.Component {
     return (
       <div class="h-100">
         <Nav location={location} />
-        {this.props.children}
+        <AuthProvider>{this.props.children}</AuthProvider>
         <Footer></Footer>
       </div>
     );

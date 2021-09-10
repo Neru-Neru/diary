@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import Calendar from './Calender';
+import { useAuthContext } from '../../context/AuthContext';
 import DiaryList from './DiaryList';
+import { db } from '../../firebase';
 
 const Mypage = () => {
   const [imglist, setImagelist] = useState([]);
   const [daylist, setDaylist] = useState([]);
+  const [username, setUsername] = useState('');
+  const { user } = useAuthContext();
 
   const history = useHistory();
 
@@ -58,11 +62,31 @@ const Mypage = () => {
     setDaylist(imglist);
   }, [imglist]);
 
+  useEffect(() => {
+    const name = db
+      .collection('/users')
+      .doc(user._delegate.email)
+      .collection('username')
+      .get()
+      .then(function (doc) {
+        console.log(doc);
+        if (doc.exists) {
+          console.log(doc.data()); // でデータを取得
+        } else {
+          console.log('No user');
+        }
+      })
+      .catch(function (error) {
+        console.log('Error : ', error);
+      });
+    //setUsername(name);
+  });
+
   return (
     <div class="container" style={{ height: '90%' }}>
       <div class="row">
         <div class="col-5 p-2">
-          <div class="h-25">なまえ：</div>
+          <div class="h-25">なまえ：{username}</div>
           <div class="h-75">
             <Calendar clickDay={moveMyDiaryList} imageList={imglist} setImagelist={setImagelist}></Calendar>
           </div>

@@ -51,7 +51,7 @@ const MyDiary = (props) => {
           </Tabs>
         </div>
         <div class="col-5">
-          <div class="p-3 border h-25 d-flex align-items-center justify-content-center">
+          <div class="mt-3 p-3 border h-25 d-flex align-items-center justify-content-center">
             <h4 class="text-center">{arg.title}</h4>
           </div>
           <div class="p-3 border h-75">

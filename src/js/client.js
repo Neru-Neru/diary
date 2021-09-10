@@ -11,6 +11,7 @@ import OtherList from './pages/OtherList';
 import OtherDiary from './pages/OtherDiary';
 import DescForm from './pages/DescForm';
 import News from './pages/News';
+import SignIn from './pages/SignIn';
 
 const app = document.getElementById('app');
 ReactDOM.render(
@@ -24,6 +25,7 @@ ReactDOM.render(
       <Route exact path="/otherdiary" component={OtherDiary}></Route>
       <Route exact path="/deskform" component={DescForm}></Route>
       <Route exact path="/news" component={News}></Route>
+      <Route exact path="/signin" component={SignIn}></Route>
     </Layout>
   </Router>,
   app
