@@ -32,6 +32,23 @@ const DiaryList = (props) => {
     props.clickTile(tile);
   };
 
+  const getThumbnail = (username, date) => {
+    let url = 'https://terminal-8c860.web.app/send-thumbnail?username=' + username + '&date=' + date;
+    return fetch(url, {
+      mode: 'cors',
+    })
+      .then(function (data) {
+        console.log(data);
+        return data;
+      })
+      .then(function (json) {
+        return json;
+      })
+      .catch(function (e) {
+        console.log(e); // エラーをキャッチし表示
+      });
+  };
+
   return (
     <div className={classes.root} class="m-2">
       <GridList autoHeight cellHeight={360} className={classes.gridList} cols={2}>
@@ -43,7 +60,7 @@ const DiaryList = (props) => {
               handleClick(tile);
             }}
           >
-            {/*<img src={tile.img} alt={tile.title} />*/}
+            {/*<img src={getThumbnail(tile.date, tile.username)} alt={tile.title} />*/}
             <GridListTileBar title={tile.title} />
           </GridListTile>
         ))}

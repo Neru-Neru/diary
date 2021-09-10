@@ -94,7 +94,7 @@ const Calendar = (props) => {
       events={async (fetchInfo, successCallback, failureCallback) => {
         const data = await getMonthData(fetchInfo, successCallback, failureCallback);
         const newEvent = getEvents(data);
-        if (newEvent.length > 0) {
+        if (newEvent) {
           successCallback(newEvent);
           const newList = handleJson(data);
           if (props.imageList.length == 0 || newList[0].date != props.imageList[0].date) {

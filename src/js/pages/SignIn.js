@@ -13,7 +13,6 @@ const SignIn = () => {
 
   const inputUsername = useCallback(
     (event) => {
-      console.log(event.target.value);
       setUsername(event.target.value);
     },
     [setUsername]
@@ -21,7 +20,6 @@ const SignIn = () => {
 
   const inputEmail = useCallback(
     (event) => {
-      console.log(event.target.value);
       setEmail(event.target.value);
     },
     [setEmail]
@@ -29,19 +27,16 @@ const SignIn = () => {
 
   const inputPassword = useCallback(
     (event) => {
-      console.log(event.target.value);
       setPassword(event.target.value);
     },
     [setPassword]
   );
 
   const signIn = async (username, email, password) => {
-    event.preventDefault();
     if (username === '' || email === '' || password == '') {
       alert('にゅうりょくしていないところがあるよ');
       return false;
     }
-    console.log(email, password);
     try {
       await auth.signInWithEmailAndPassword(email, password);
       history.push('/');

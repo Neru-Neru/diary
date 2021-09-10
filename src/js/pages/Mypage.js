@@ -40,6 +40,8 @@ const Mypage = () => {
     for (let i of Object.keys(json)) {
       // 各動画ごとに生成
       let tmp = {
+        username: 'taisei',
+        date: i,
         title: json[i].title,
         desc: json[i].desc,
         query: json[i].query,
@@ -64,23 +66,17 @@ const Mypage = () => {
 
   useEffect(() => {
     const name = db
-      .collection('/users')
-      .doc(user._delegate.email)
-      .collection('username')
+      .collection('users')
       .get()
-      .then(function (doc) {
-        console.log(doc);
-        if (doc.exists) {
-          console.log(doc.data()); // でデータを取得
-        } else {
-          console.log('No user');
-        }
-      })
-      .catch(function (error) {
-        console.log('Error : ', error);
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          let userdata = doc.data();
+          if (userdata.mail === user.email) {
+            setUsername(userdata.username);
+          }
+        });
       });
-    //setUsername(name);
-  });
+  }, []);
 
   return (
     <div class="container" style={{ height: '90%' }}>

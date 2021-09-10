@@ -47,6 +47,8 @@ const OtherList = () => {
     for (let i of Object.keys(json)) {
       // 各動画ごとに生成
       let tmp = {
+        username: 'taisei',
+        date: i,
         title: json[i].title,
         desc: json[i].desc,
         query: json[i].query,
