@@ -10,8 +10,13 @@
     ],
     "headers": [
       {
-        "key": "Access-Control-Allow-Origin",
-        "value": "*"
+        "source": "**/*.@(eot|otf|ttf|ttc|woff|font.css)",
+        "headers": [
+          {
+            "key": "Access-Control-Allow-Origin",
+            "value": "*"
+          }
+        ]
       }
     ]
   }

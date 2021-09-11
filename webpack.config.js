@@ -5,21 +5,6 @@ var path = require('path');
 module.exports = {
   context: path.join(__dirname, 'src'),
   entry: './js/client.js',
-  /*target: 'node',
-  externals: { canvas: {} },
-  resolve: {
-    fallback: {
-      path: require.resolve('path-browserify'),
-      crypto: require.resolve('crypto-browserify'),
-      stream: require.resolve('stream-browserify'),
-      zlib: require.resolve('browserify-zlib'),
-      https: require.resolve('https-browserify'),
-      vm: require.resolve('vm-browserify'),
-      http: require.resolve('stream-http'),
-      os: require.resolve('os-browserify/browser'),
-      constants: require.resolve('constants-browserify'),
-    },
-  },*/
   module: {
     rules: [
       {

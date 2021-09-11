@@ -16,8 +16,8 @@ const Mypage = () => {
   const moveMyDiaryList = (date) => {
     // 日付選択したら、その動画が表示される
     let url = 'https://terminal-8c860.web.app/load-day?';
-    url += 'username=taisei&';
-    url += 'date=' + date;
+    url += 'username=' + user.username;
+    url += '&date=' + date;
     fetch(url, {
       mode: 'cors',
     })
@@ -62,6 +62,7 @@ const Mypage = () => {
 
   useEffect(() => {
     setDaylist(imglist);
+    console.log(imglist);
   }, [imglist]);
 
   useEffect(() => {
@@ -84,7 +85,7 @@ const Mypage = () => {
         <div class="col-5 p-2">
           <div class="h-25">なまえ：{username}</div>
           <div class="h-75">
-            <Calendar clickDay={moveMyDiaryList} imageList={imglist} setImagelist={setImagelist}></Calendar>
+            <Calendar clickDay={moveMyDiaryList} imageList={imglist} setImagelist={setImagelist} flg={true}></Calendar>
           </div>
         </div>
         <div class="col-7 p-2">

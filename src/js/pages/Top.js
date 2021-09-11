@@ -14,7 +14,6 @@ const Top = () => {
 
   if (!user) return <Redirect to="/signin"></Redirect>;
   else {
-    console.log(user);
     return (
       <div class="container" style={{ height: '100%' }}>
         <div class="row h-75">

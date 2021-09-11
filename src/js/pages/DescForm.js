@@ -61,7 +61,7 @@ const DescForm = (props) => {
         <iframe src="http://127.0.0.1:5500/make_thumbnail.html" scrolling="no" width="100%" height="470px"></iframe>
       </div>
       <div class="h-50">
-        <h5>くわしいこと</h5>
+        <h4>くわしいこと</h4>
         <form>
           <div class="mb-3">
             <label class="control-label" for="title">

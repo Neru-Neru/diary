@@ -9,7 +9,6 @@ const Calendar = (props) => {
 
   const handleClick = (arg) => {
     // 対象日の動画を取得する
-    console.log(arg);
     if (arg.dateStr) {
       props.clickDay(arg.dateStr);
     } else {
@@ -27,7 +26,8 @@ const Calendar = (props) => {
     const day = new Date(fetchInfo.start);
     const year = day.getFullYear();
     const month = day.getMonth() + 1;
-    setYearMonth(year + '-' + month);
+    const pre = year + '-' + month;
+    setYearMonth(pre);
     if (yearmonth === year + '-' + month) {
       let url = 'https://terminal-8c860.web.app/load-month?';
       url += 'username=taisei&';
@@ -92,14 +92,18 @@ const Calendar = (props) => {
       eventClick={handleClick}
       showNonCurrentDates={false}
       events={async (fetchInfo, successCallback, failureCallback) => {
-        const data = await getMonthData(fetchInfo, successCallback, failureCallback);
-        const newEvent = getEvents(data);
-        if (newEvent) {
-          successCallback(newEvent);
-          const newList = handleJson(data);
-          if (props.imageList.length == 0 || newList[0].date != props.imageList[0].date) {
-            props.setImagelist(newList);
+        if (props.flg) {
+          const data = await getMonthData(fetchInfo, successCallback, failureCallback);
+          const newEvent = getEvents(data);
+          if (newEvent) {
+            successCallback(newEvent);
+            const newList = handleJson(data);
+            if (props.imageList.length == 0 || newList[0].date != props.imageList[0].date) {
+              props.setImagelist(newList);
+            }
           }
+        } else {
+          successCallback({});
         }
       }}
       eventContent={function (arg, createElement) {

@@ -170,15 +170,17 @@ const Editor = () => {
   };
 
   const checkDouwnloadLink = () => {
+    var dpObj = new DOMParser();
+    var xmlDoc = dpObj.parseFromString(xml, 'text/xml');
+    var blocks = xmlDoc.getElementsByTagName('block');
+    console.log(blocks.length);
     const iframe = document.getElementById('iframe');
     // ダウンロードリンクの探索
     var time = 0;
     const intervalId = setInterval(() => {
-      console.log('Not exist');
       //if (iframe.contentWindow.document.querySelector('#downloadlink') != null) {
       time++;
-      if (time > 7) {
-        console.log('Exist');
+      if (time > 4 * blocks.length) {
         clearInterval(intervalId); //intervalIdをclearIntervalで指定している
         document.getElementById('after_download').style.display = 'block';
       }

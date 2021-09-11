@@ -51,10 +51,10 @@ const MyDiary = (props) => {
           </Tabs>
         </div>
         <div class="col-5">
-          <div class="mt-3 p-3 border h-25 d-flex align-items-center justify-content-center">
+          <div class="my-3 p-3 border rounded-pill d-flex align-items-center justify-content-center bg-white">
             <h4 class="text-center">{arg.title}</h4>
           </div>
-          <div class="p-3 border h-75">
+          <div class="p-3 border h-75 rounded-3 bg-white">
             <p>{arg.desc}</p>
           </div>
         </div>

@@ -4,27 +4,22 @@ import Calendar from './Calender';
 import DiaryList from './DiaryList';
 
 const OtherList = () => {
-  const [date, setDate] = useState();
   const [imglist, setImagelist] = useState([]);
   const [daylist, setDaylist] = useState([]);
 
   const history = useHistory();
 
   useEffect(() => {
-    /*
     var today = new Date();
     var year = today.getFullYear();
     var month = ('00' + (today.getMonth() + 1)).slice(-2);
     var day = ('00' + today.getDate()).slice(-2);
     moveDiaryOfDate(year + '-' + month + '-' + day);
-    */
-    setDaylist(imglist);
-  }, [imglist]);
+  }, []);
 
   const moveDiaryOfDate = (date) => {
     let url = 'https://terminal-8c860.web.app/load-day?';
     url += 'date=' + date;
-    console.log(url);
     fetch(url, {
       mode: 'cors',
     })
@@ -32,7 +27,7 @@ const OtherList = () => {
         return data.json();
       })
       .then(function (json) {
-        const daylist = handleJson(json); // jsonの処理をする
+        const daylist = handleJson(json, date); // jsonの処理をする
         setDaylist(daylist); // stateを変更
       })
       .catch((e) => {
@@ -40,15 +35,15 @@ const OtherList = () => {
       });
   };
 
-  const handleJson = (json) => {
+  const handleJson = (json, date) => {
     // jsonの処理
     let data = [];
     console.log(json);
     for (let i of Object.keys(json)) {
       // 各動画ごとに生成
       let tmp = {
-        username: 'taisei',
-        date: i,
+        username: i,
+        date: date,
         title: json[i].title,
         desc: json[i].desc,
         query: json[i].query,
@@ -69,7 +64,7 @@ const OtherList = () => {
     <div class="container" style={{ height: '90%' }}>
       <div class="row">
         <div class="col-5 p-2">
-          <Calendar clickDay={moveDiaryOfDate} imageList={imglist} setImagelist={setImagelist}></Calendar>
+          <Calendar clickDay={moveDiaryOfDate} imageList={imglist} setImagelist={setImagelist} flg={false}></Calendar>
         </div>
         <div class="col-7 p-2">
           <h3>みんなのにっき</h3>

@@ -1,21 +1,37 @@
 import React, { useState, useCallback } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import { act_dic } from '../components/blocks/act_dic';
+import { ele_dic } from '../components/blocks/ele_dict';
 
 const OtherDiary = (props) => {
   const arg = props.history.location.state.tile;
   const src =
     'https://terminal-8c860.web.app/pixi?' + 'username=' + arg.username + '&date=' + arg.date + '&' + arg.query;
+  // クエリの処理
   let ans = '';
+  let act = [];
+  let ele = [];
+  let flg = true;
   const queryList = arg.query.split('&');
   for (const elem of queryList) {
     const block = elem.split('=');
-    if (block[0] == '/^action/') {
-      ans += 'action' + block[1];
+    if (block[0].match(/^a/g)) {
+      act.push(act_dic[block[1]]);
+      if (flg) {
+        ele.push('');
+        flg = !flg;
+      }
+      flg = !flg;
     } else {
-      ans += 'element' + block[1];
+      ele.push(ele_dic[block[1]]);
+      flg = !flg;
     }
   }
+  for (let i = 0; i < act.length; i++) {
+    ans += ele[i] + act[i];
+  }
+  console.log(ans);
 
   return (
     <div class="container">
