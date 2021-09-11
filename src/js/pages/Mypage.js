@@ -1,3 +1,7 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { css, jsx } from '@emotion/react';
+
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import Calendar from './Calender';
@@ -80,7 +84,7 @@ const Mypage = () => {
   }, []);
 
   return (
-    <div class="container" style={{ height: '90%' }}>
+    <div css={Background}>
       <div class="row">
         <div class="col-5 p-2">
           <div class="h-25">なまえ：{username}</div>
@@ -96,5 +100,16 @@ const Mypage = () => {
     </div>
   );
 };
+
+const Background = css`
+  width: 100%;
+  height: 90%;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  background-color: #8ac7de;
+  padding: 0 15%;
+`;
 
 export default Mypage;

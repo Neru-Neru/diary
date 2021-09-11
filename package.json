@@ -42,6 +42,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.15.4",
+    "@emotion/react": "^11.4.1",
     "@fullcalendar/core": "^5.9.0",
     "@fullcalendar/daygrid": "^5.9.0",
     "@fullcalendar/interaction": "^5.9.0",

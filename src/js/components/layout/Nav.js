@@ -1,65 +1,110 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { css, jsx } from '@emotion/react';
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaUserAlt, FaBookOpen, FaRegEnvelope, FaHome } from 'react-icons/fa';
+import { auth } from '../../../firebase';
+import { useHistory } from 'react-router-dom';
 
-export default class Nav extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      collapsed: true,
-    };
-  }
-  toggleCollapse() {
-    const collapsed = !this.state.collapsed;
-    this.setState({ collapsed });
-  }
-  render() {
-    const { location } = this.props;
-    const { collapsed } = this.state;
-    return (
-      <nav class="navbar navbar-expand fixed-top bluebell p-3" role="navigation">
-        <div class="container">
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <Link to="/" onClick={this.toggleCollapse.bind(this)} class="text-decoration-none">
-                  <a class="navbar-brand gray-char text-dark">ぶろっこりー</a>
-                </Link>
-              </li>
-            </ul>
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <Link to="/mypage" onClick={this.toggleCollapse.bind(this)}>
-                  <a class="nav-link">
-                    <FaUserAlt size={25} class="text-dark" />
-                  </a>
-                </Link>
-              </li>
-              <li class="nav-item d-flex align-items-center">
-                <Link to="/editor" onClick={this.toggleCollapse.bind(this)}>
-                  <a class="nav-link">
-                    <FaBookOpen size={30} class="text-dark" />
-                  </a>
-                </Link>
-              </li>
-              <li class="nav-item d-flex align-items-center">
-                <Link to="" onClick={this.toggleCollapse.bind(this)}>
-                  <a class="nav-link">
-                    <FaRegEnvelope size={30} class="text-dark" />
-                  </a>
-                </Link>
-              </li>
-              <li class="nav-item d-flex align-items-center">
-                <Link to="/" onClick={this.toggleCollapse.bind(this)}>
-                  <a class="nav-link">
-                    <FaHome size={30} class="text-dark" />
-                  </a>
-                </Link>
-              </li>
-            </ul>
+const Nav = (props) => {
+  const history = useHistory();
+
+  const handleLogout = () => {
+    auth.signOut();
+    history.push('/signin');
+  };
+
+  return (
+    <div css={Navbar(props.location.pathname === '/' ? 20 : 12)}>
+      <Link to="/">
+        <div css={NavBlock(50, 10)} style={{ display: props.location.pathname === '/' ? 'none' : 'block' }}>
+          <div css={HoverDiv}>
+            <img src="../../../img/nab_bl_2.png" style={{ height: '100%' }}></img>
+            <p css={Text(props.location.pathname === '/' ? 16 : 12)}>トップ</p>
           </div>
         </div>
-      </nav>
-    );
+      </Link>
+      <Link to="/editor">
+        <div css={NavBlock(50, 60)}>
+          <div css={HoverDiv}>
+            <img src="../../../img/nab_bl_1.png" style={{ height: '100%' }}></img>
+            <p css={Text(props.location.pathname === '/' ? 16 : 12)}>
+              にっき<br></br>を<br></br>かく
+            </p>
+          </div>
+        </div>
+      </Link>
+      <Link to="/mypage">
+        <div css={NavBlock(80, 70)}>
+          <div css={HoverDiv}>
+            <img src="../../../img/nab_bl_2.png" style={{ height: '100%' }}></img>
+            <p css={Text(props.location.pathname === '/' ? 16 : 12)}>
+              じぶん<br></br>の<br></br>にっき
+            </p>
+          </div>
+        </div>
+      </Link>
+      <Link to="/otherlist">
+        <div css={NavBlock(50, 80)}>
+          <div css={HoverDiv}>
+            <img src="../../../img/nab_bl_1.png" style={{ height: '100%' }}></img>
+            <p css={Text(props.location.pathname === '/' ? 16 : 12)}>
+              みんな<br></br>の<br></br>にっき
+            </p>
+          </div>
+        </div>
+      </Link>
+      <Link to="/news">
+        <div css={NavBlock(80, 90)}>
+          <div css={HoverDiv}>
+            <img src="../../../img/nab_bl_2.png" style={{ height: '100%' }}></img>
+            <p css={Text(props.location.pathname === '/' ? 16 : 12)}>おしらせ</p>
+          </div>
+        </div>
+      </Link>
+    </div>
+  );
+};
+
+const Navbar = (height) => css`
+  background-color: rgba(255, 255, 255, 0);
+  position: absolute;
+  width: 100%;
+  height: ${height}%;
+`;
+
+const NavBlock = (top, left) => css`
+  height: 80%;
+  position: absolute;
+  transform: translate(-50%, -50%) rotateZ(0deg);
+  top: ${top}%;
+  left: ${left}%;
+  z-index: 1;
+  transition: all 0.75s ease-in-out;
+  color: #222;
+  &:hover {
+    transform: translate(-50%, -50%) rotateZ(360deg);
   }
-}
+`;
+
+const Text = (fontsize) => css`
+  position: absolute;
+  margin: 0;
+  font-size: ${fontsize}px;
+  text-decoration: none;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`;
+
+const HoverDiv = css`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+`;
+
+export default Nav;

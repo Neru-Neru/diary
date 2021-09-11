@@ -1,10 +1,13 @@
-import { Names } from 'blockly';
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { css, jsx } from '@emotion/react';
+
 import React from 'react';
 
 const News = () => {
   return (
-    <div style={{ height: '150px' }}>
-      <div class="row h-100 my-2 border-top border-bottom">
+    <div css={Background}>
+      <div class="row h-25 my-2 border-top border-bottom">
         <div class="col-2 h-100 d-flex align-items-center justify-content-center">
           <div
             class="border d-flex align-items-center justify-content-center bg-success"
@@ -27,7 +30,7 @@ const News = () => {
         </div>
       </div>
 
-      <div class="row h-100 my-2 border-top border-bottom">
+      <div class="row h-25 my-2 border-top border-bottom">
         <div class="col-2 h-100 d-flex align-items-center justify-content-center">
           <div
             class="border d-flex align-items-center justify-content-center bg-success"
@@ -52,5 +55,16 @@ const News = () => {
     </div>
   );
 };
+
+const Background = css`
+  width: 100%;
+  height: 90%;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  background-color: #8ac7de;
+  padding: 0 15%;
+`;
 
 export default News;

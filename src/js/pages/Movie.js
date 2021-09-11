@@ -1,3 +1,7 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { css, jsx } from '@emotion/react';
+
 import React, { useState, useEffect } from 'react';
 
 const Movie = (props) => {

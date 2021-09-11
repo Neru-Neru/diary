@@ -1,3 +1,7 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { css, jsx } from '@emotion/react';
+
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import Calendar from './Calender';
@@ -6,6 +10,7 @@ import DiaryList from './DiaryList';
 const OtherList = () => {
   const [imglist, setImagelist] = useState([]);
   const [daylist, setDaylist] = useState([]);
+  const [day, setDay] = useState('');
 
   const history = useHistory();
 
@@ -29,6 +34,7 @@ const OtherList = () => {
       .then(function (json) {
         const daylist = handleJson(json, date); // jsonの処理をする
         setDaylist(daylist); // stateを変更
+        setDay(date);
       })
       .catch((e) => {
         console.log(e); // エラーをキャッチし表示
@@ -61,18 +67,29 @@ const OtherList = () => {
   };
 
   return (
-    <div class="container" style={{ height: '90%' }}>
+    <div css={Background}>
       <div class="row">
         <div class="col-5 p-2">
           <Calendar clickDay={moveDiaryOfDate} imageList={imglist} setImagelist={setImagelist} flg={false}></Calendar>
         </div>
         <div class="col-7 p-2">
-          <h3>みんなのにっき</h3>
+          <h3>{day}のみんなのにっき</h3>
           <DiaryList imageList={daylist} clickTile={clickTile}></DiaryList>
         </div>
       </div>
     </div>
   );
 };
+
+const Background = css`
+  width: 100%;
+  height: 90%;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  background-color: #8ac7de;
+  padding: 0 15%;
+`;
 
 export default OtherList;
