@@ -37,7 +37,7 @@ const Nav = (props) => {
         </div>
       </Link>
       <Link to="/mypage">
-        <div css={NavBlock(80, 70)}>
+        <div css={NavBlock(props.location.pathname === '/' ? 80 : 50, 70)}>
           <div css={HoverDiv}>
             <img src="../../../img/nab_bl_2.png" style={{ height: '100%' }}></img>
             <p css={Text(props.location.pathname === '/' ? 16 : 12)}>
@@ -57,7 +57,7 @@ const Nav = (props) => {
         </div>
       </Link>
       <Link to="/news">
-        <div css={NavBlock(80, 90)}>
+        <div css={NavBlock(props.location.pathname === '/' ? 80 : 50, 90)}>
           <div css={HoverDiv}>
             <img src="../../../img/nab_bl_2.png" style={{ height: '100%' }}></img>
             <p css={Text(props.location.pathname === '/' ? 16 : 12)}>おしらせ</p>

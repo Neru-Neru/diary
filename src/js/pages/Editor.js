@@ -8,7 +8,9 @@ import Blockly from 'blockly';
 import { BlocklyWorkspace } from 'react-blockly';
 import '../components/blocks/ele_blocks';
 import '../components/blocks/act_blocks';
+import '../components/blocks/block_xml';
 import Movie from './Movie';
+import { Categories } from '../components/blocks/block_xml';
 
 const Editor = () => {
   const [xml, setXml] = useState('');
@@ -19,94 +21,7 @@ const Editor = () => {
   const initialXml =
     '<xml xmlns="http://www.w3.org/1999/xhtml"><block type="text" x="70" y="30"><field name="TEXT"></field></block></xml>';
 
-  const toolboxCategories = {
-    kind: 'categoryToolbox',
-    contents: [
-      {
-        kind: 'category',
-        name: 'たべもの',
-        expanded: true,
-        colour: 0,
-        contents: [
-          {
-            kind: 'block',
-            type: 'curry',
-          },
-        ],
-      },
-      {
-        kind: 'category',
-        name: 'ばしょ',
-        expanded: true,
-        colour: 0,
-        contents: [
-          {
-            kind: 'block',
-            type: 'park',
-          },
-        ],
-      },
-      {
-        kind: 'category',
-        name: 'のりもの',
-        expanded: true,
-        colour: 0,
-        contents: [
-          {
-            kind: 'block',
-            type: 'bicycle',
-          },
-          {
-            kind: 'block',
-            type: 'car',
-          },
-          {
-            kind: 'block',
-            type: 'train',
-          },
-        ],
-      },
-      {
-        kind: 'category',
-        name: 'あそび',
-        expanded: true,
-        colour: 0,
-        contents: [
-          {
-            kind: 'block',
-            type: 'baseball',
-          },
-          {
-            kind: 'block',
-            type: 'game',
-          },
-        ],
-      },
-      {
-        kind: 'category',
-        name: 'どうさ',
-        colour: 230,
-        contents: [
-          {
-            kind: 'block',
-            type: '.eat',
-          },
-          {
-            kind: 'block',
-            type: '.run',
-          },
-          {
-            kind: 'block',
-            type: '.ride',
-          },
-          {
-            kind: 'block',
-            type: '.play',
-          },
-        ],
-      },
-    ],
-  };
+  const toolboxCategories = Categories;
 
   function workspaceDidChange(workspace) {
     const code = Blockly.JavaScript.workspaceToCode(workspace);

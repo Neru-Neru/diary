@@ -1,6 +1,15 @@
 export const act_dic = {
   run: 'はしる',
-  eat: 'たべる',
+  eat: 'をたべる',
   play: 'であそぶ',
   ride: 'にのる',
+  cook: 'をりょうりする',
+  getup: 'おきる',
+  sleep: 'ねる',
+  buy: 'をかう',
+  practice: 'をりょうりする',
+  watch: 'をみる',
+  draw: 'をかく',
+  make: 'をつくる',
+  study: 'べんきょうする',
 };
