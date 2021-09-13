@@ -30,6 +30,7 @@ const Movie = (props) => {
     }
     url += query;
     setUrl(url + '&' + today.getTime());
+    console.log(url);
     handleDisplay();
   };
 

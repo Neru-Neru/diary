@@ -85,14 +85,30 @@ const Mypage = () => {
 
   return (
     <div css={Background}>
-      <div class="row">
-        <div class="col-5 p-2">
-          <div class="h-25">なまえ：{username}</div>
+      <div css={DiaryBg} class="row">
+        <div class="col-5 p-3">
+          <div class="d-flex h-25 pt-5">
+            <div
+              class="border d-flex align-items-center justify-content-center bg-light"
+              style={{ width: '100px', height: '100px', 'border-radius': '50%' }}
+            >
+              <p class="m-0" style={{ 'text-align': 'center', 'line-height': '50%', 'font-size': '30px' }}>
+                <i class="fas fa-glasses"></i>
+              </p>
+            </div>
+            <div class="">なまえ：{username}</div>
+          </div>
           <div class="h-75">
-            <Calendar clickDay={moveMyDiaryList} imageList={imglist} setImagelist={setImagelist} flg={true}></Calendar>
+            <Calendar
+              clickDay={moveMyDiaryList}
+              imageList={imglist}
+              setImagelist={setImagelist}
+              flg={true}
+              username={username}
+            ></Calendar>
           </div>
         </div>
-        <div class="col-7 p-2">
+        <div class="col-7 p-3">
           <h3>じぶんのにっき</h3>
           <DiaryList imageList={daylist} clickTile={clickTile}></DiaryList>
         </div>
@@ -109,7 +125,11 @@ const Background = css`
   left: 50%;
   transform: translate(-50%, 0%);
   background-color: #8ac7de;
-  padding: 0 15%;
+  padding: 0 10%;
+`;
+
+const DiaryBg = css`
+  background: rgb(220 242 250);
 `;
 
 export default Mypage;

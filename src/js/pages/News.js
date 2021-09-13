@@ -64,7 +64,7 @@ const Background = css`
   left: 50%;
   transform: translate(-50%, 0%);
   background-color: #8ac7de;
-  padding: 0 15%;
+  padding: 0 10%;
 `;
 
 const NewsBlock = css`

@@ -18,6 +18,15 @@ const Top = () => {
       <div css={Background} style={{ height: '100%' }}>
         <div css={Plate}>
           <img src="../../img/nab_bl_3.png" style={{ width: '100%' }}></img>
+          <div css={Circle(11, 18.6, 33.4)} class="circle">
+            <Link to="/editor">
+              <div css={CircleIn('#7abf66', '#fff')} class="circle-in">
+                <p css={Text(18)}>
+                  つかい<br></br>かた
+                </p>
+              </div>
+            </Link>
+          </div>
           <div css={Circle(11, 31.5, 52.2)} class="circle">
             <Link to="/editor">
               <div css={CircleIn('#988ccc', '#fff')} class="circle-in">
@@ -56,10 +65,21 @@ const Top = () => {
 
         <div css={Souce}>
           <img src="../../img/nab_bl_4.png" style={{ width: '100%' }}></img>
+          <div css={Circle(60, 68.5, 50)} class="circle">
+            <div css={CircleIn('#fff', '#000')} class="circle-in">
+              <p css={Text(18)}>ロゴ</p>
+            </div>
+          </div>
         </div>
 
         <div css={Note}>
-          <img src="../../img/nab_bl_5.png" style={{ width: '100%', height: '100%' }}></img>
+          <p css={NoteP}>「ぶろっこりー」は、日記を通してプログラミングを学ぶWebアプリケーションです。</p>
+          <p css={NoteP}>
+            プログラミングと聞くと、難しいイメージを持たれがちですが、身近な日記という題材を用いて、プログラミング経験をしてみませんか？
+          </p>
+          <p css={NoteP}>
+            まずは、にっきをかくボタンから始めてみてください。その後は、みんなのにっきを覗いてみたり、じぶんのにっきを確認してみたりしてください。
+          </p>
         </div>
       </div>
     );
@@ -89,12 +109,33 @@ const Souce = css`
 `;
 
 const Note = css`
-  width: 20%;
+  width: 30%;
   height: 40%;
   position: absolute;
   bottom: 5%;
   left: 5%;
   overflow: hidden;
+  border: solid 2px #999;
+  padding: 2em 1em 0 2em;
+  background: #fffff0;
+`;
+
+const NoteP = css`
+  border-bottom: dashed 1px #ccc;
+  line-height: 1.5;
+  padding: 0.5em 0 0.5em 0.5em;
+  margin: 0;
+  &:last-of-type {
+    border-bottom: none;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    border-right: dotted 10px #ddd;
+    height: 90%;
+    top: 0.5em;
+    left: 0.5em;
+  }
 `;
 
 const Circle = (width, top, left) => css`

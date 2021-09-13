@@ -30,7 +30,7 @@ const Calendar = (props) => {
     setYearMonth(pre);
     if (yearmonth === year + '-' + month) {
       let url = 'https://terminal-8c860.web.app/load-month?';
-      url += 'username=taisei&';
+      url += 'username=' + props.username + '&';
       url += 'month=' + year + '-' + month;
       console.log(url);
       return fetch(url, {

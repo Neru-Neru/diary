@@ -47,6 +47,9 @@ pre {
   color: black;
   text-decoration: none;
 }
+.fc-view-harness {
+  background-color: #fff;
+}
 .fc-day-sat a {
   color: blue !important;
 }

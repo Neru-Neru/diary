@@ -31,7 +31,7 @@ const Editor = () => {
     const code = Blockly.JavaScript.workspaceToCode(workspace);
     setJavascriptCode(code);
   }
-
+  console.log(javascriptCode);
   function getQueryStrings() {
     //ブロックからクエリ(配列)を生成
     var dpObj = new DOMParser();
@@ -65,6 +65,7 @@ const Editor = () => {
     // しょうさいにゅうりょくボタン
     setPixi();
     const { elements, actions } = getQueryStrings();
+    console.log(username);
     history.push({
       pathname: '/deskform',
       state: { username, elements, actions },
@@ -150,7 +151,7 @@ const Editor = () => {
               id="code"
               class="note h-100 border"
               style={{ width: '100%', resize: 'none' }}
-              value={javascriptCode}
+              value={javascriptCode === '' ? 'ここににっきがひょうじされるよ' : javascriptCode}
               readOnly
             ></textarea>
           </div>
@@ -159,7 +160,7 @@ const Editor = () => {
           <div class="row h-25 border py-3">
             <p>1：ひだりのがめんで、ブロックをくみたててみよう！</p>
             <p>2：「どうがをみる」ボタンで、どうがをかくにんしてみてね！</p>
-            <p>3：「しょうさいをきめる」ボタンで、にっきのじょうほうをにゅうりょくしていこう！</p>
+            <p>3：「しょうさいをきめる」ボタンで、にっきのじょうほうをにゅうりょくしてね！</p>
           </div>
           <div class="row h-50 border py-3">
             <Movie
@@ -194,7 +195,7 @@ const Background = css`
   left: 50%;
   transform: translate(-50%, 0%);
   background-color: #8ac7de;
-  padding: 0 15%;
+  padding: 0 10%;
 `;
 
 export default Editor;

@@ -10,7 +10,7 @@ const DescForm = (props) => {
 
   const { clickEvent } = props;
 
-  const arg = props.history.location.state.tile;
+  const arg = props.history.location.state;
 
   const changeTitle = (event) => {
     setTitle(event.target.value);
@@ -63,13 +63,13 @@ const DescForm = (props) => {
   console.log(url);
 
   return (
-    <div>
+    <div css={Background}>
       <div class="h-50">
         <iframe src={url} scrolling="no" width="100%" height="100%"></iframe>
         {/*<iframe src="http://127.0.0.1:5500/make_thumbnail.html" scrolling="no" width="100%" height="470px"></iframe>*/}
       </div>
       <div class="h-50">
-        <h4>くわしいこと</h4>
+        <h4 class="pt-3">くわしいこと</h4>
         <form>
           <div class="mb-3">
             <label class="control-label" for="title">
@@ -109,5 +109,16 @@ const DescForm = (props) => {
     </div>
   );
 };
+
+const Background = css`
+  width: 100%;
+  height: 85%;
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  background-color: #8ac7de;
+  padding: 0 10%;
+`;
 
 export default DescForm;

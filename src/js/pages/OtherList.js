@@ -62,16 +62,14 @@ const OtherList = () => {
     console.log(json);
     for (let i of Object.keys(json)) {
       // 各動画ごとに生成
-      if (i !== username) {
-        let tmp = {
-          username: i,
-          date: date,
-          title: json[i].title,
-          desc: json[i].desc,
-          query: json[i].query,
-        };
-        data.push(tmp);
-      }
+      let tmp = {
+        username: i,
+        date: date,
+        title: json[i].title,
+        desc: json[i].desc,
+        query: json[i].query,
+      };
+      data.push(tmp);
     }
     return data;
   };
@@ -85,11 +83,17 @@ const OtherList = () => {
 
   return (
     <div css={Background}>
-      <div class="row">
-        <div class="col-5 p-2">
-          <Calendar clickDay={moveDiaryOfDate} imageList={imglist} setImagelist={setImagelist} flg={false}></Calendar>
+      <div css={DiaryBg} class="row">
+        <div class="col-5 p-3">
+          <Calendar
+            clickDay={moveDiaryOfDate}
+            imageList={imglist}
+            setImagelist={setImagelist}
+            flg={false}
+            username={username}
+          ></Calendar>
         </div>
-        <div class="col-7 p-2">
+        <div class="col-7 p-3">
           <h3>{day}のみんなのにっき</h3>
           <DiaryList imageList={daylist} clickTile={clickTile}></DiaryList>
         </div>
@@ -106,7 +110,11 @@ const Background = css`
   left: 50%;
   transform: translate(-50%, 0%);
   background-color: #8ac7de;
-  padding: 0 15%;
+  padding: 0 10%;
+`;
+
+const DiaryBg = css`
+  background: rgb(220 242 250);
 `;
 
 export default OtherList;

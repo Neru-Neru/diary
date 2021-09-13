@@ -31,7 +31,9 @@ const Nav = (props) => {
       <div css={NavBlock(50, 20)} style={{ display: props.location.pathname === '/' ? 'none' : 'block' }}>
         <div css={HoverDiv} onClick={handleLogout}>
           <img src="../../../img/nab_bl_1.png" style={{ height: '100%' }}></img>
-          <p css={Text(props.location.pathname === '/' ? 16 : 12)}>ログアウト</p>
+          <p css={Text(props.location.pathname === '/' ? 16 : 12)}>
+            ログ<br></br>アウト
+          </p>
         </div>
       </div>
       <Link to="/editor">
