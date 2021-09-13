@@ -38,7 +38,7 @@ const MyDiary = (props) => {
   console.log(ans);
 
   return (
-    <div class="h-100">
+    <div css={Background}>
       <div class="row py-5">
         <div class="col-7">
           <Tabs indicatorColor="primary" textColor="primary" centered>
@@ -66,5 +66,16 @@ const MyDiary = (props) => {
     </div>
   );
 };
+
+const Background = css`
+  width: 100%;
+  height: 85%;
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  background-color: #8ac7de;
+  padding: 0 15%;
+`;
 
 export default MyDiary;

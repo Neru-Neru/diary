@@ -7,14 +7,14 @@ import React, { useState, useEffect } from 'react';
 const Movie = (props) => {
   const [url, setUrl] = useState('');
 
-  const { clickEvent, handleDisplay, hideDescBtn } = props;
+  const { clickEvent, handleDisplay, hideDescBtn, username } = props;
 
   const handleClick = () => {
     //どうがをみるボタン
     hideDescBtn();
     const { elements, actions } = clickEvent();
     let url = 'https://terminal-8c860.web.app/pixi?';
-    url += 'username=taisei&';
+    url += 'username=' + username + '&';
 
     const today = new Date();
     const year = today.getFullYear();
@@ -29,7 +29,6 @@ const Movie = (props) => {
       if (i < elements.length - 1) query += '&';
     }
     url += query;
-    //window.open(url, '_blank'); // 新しいタブを開き、ページを表示
     setUrl(url + '&' + today.getTime());
     handleDisplay();
   };

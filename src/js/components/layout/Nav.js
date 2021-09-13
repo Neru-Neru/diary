@@ -17,7 +17,9 @@ const Nav = (props) => {
   };
 
   return (
-    <div css={Navbar(props.location.pathname === '/' ? 20 : 12)}>
+    <div
+      css={Navbar(props.location.pathname === '/' ? 20 : 12, props.location.pathname === '/signin' ? 'none' : 'block')}
+    >
       <Link to="/">
         <div css={NavBlock(50, 10)} style={{ display: props.location.pathname === '/' ? 'none' : 'block' }}>
           <div css={HoverDiv}>
@@ -26,6 +28,12 @@ const Nav = (props) => {
           </div>
         </div>
       </Link>
+      <div css={NavBlock(50, 20)} style={{ display: props.location.pathname === '/' ? 'none' : 'block' }}>
+        <div css={HoverDiv} onClick={handleLogout}>
+          <img src="../../../img/nab_bl_1.png" style={{ height: '100%' }}></img>
+          <p css={Text(props.location.pathname === '/' ? 16 : 12)}>ログアウト</p>
+        </div>
+      </div>
       <Link to="/editor">
         <div css={NavBlock(50, 60)}>
           <div css={HoverDiv}>
@@ -68,11 +76,12 @@ const Nav = (props) => {
   );
 };
 
-const Navbar = (height) => css`
+const Navbar = (height, signin) => css`
   background-color: rgba(255, 255, 255, 0);
   position: absolute;
   width: 100%;
   height: ${height}%;
+  display: ${signin};
 `;
 
 const NavBlock = (top, left) => css`

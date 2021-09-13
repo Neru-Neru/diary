@@ -7,9 +7,9 @@ export const act_dic = {
   getup: 'おきる',
   sleep: 'ねる',
   buy: 'をかう',
-  practice: 'をりょうりする',
+  practice: 'をれんしゅうする',
   watch: 'をみる',
   draw: 'をかく',
   make: 'をつくる',
-  study: 'べんきょうする',
+  study: 'べんきょうをする',
 };

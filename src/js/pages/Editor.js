@@ -11,12 +11,16 @@ import '../components/blocks/act_blocks';
 import '../components/blocks/block_xml';
 import Movie from './Movie';
 import { Categories } from '../components/blocks/block_xml';
+import { useAuthContext } from '../../context/AuthContext';
+import { db } from '../../firebase';
 
 const Editor = () => {
   const [xml, setXml] = useState('');
+  const [username, setUsername] = useState('');
   const [javascriptCode, setJavascriptCode] = useState('');
 
   const history = useHistory();
+  const { user } = useAuthContext();
 
   const initialXml =
     '<xml xmlns="http://www.w3.org/1999/xhtml"><block type="text" x="70" y="30"><field name="TEXT"></field></block></xml>';
@@ -60,8 +64,10 @@ const Editor = () => {
   const moveForm = () => {
     // しょうさいにゅうりょくボタン
     setPixi();
+    const { elements, actions } = getQueryStrings();
     history.push({
       pathname: '/deskform',
+      state: { username, elements, actions },
     });
   };
 
@@ -70,7 +76,7 @@ const Editor = () => {
     const { elements, actions } = getQueryStrings();
     let url = 'https://terminal-8c860.web.app/pixi?';
 
-    url += 'username=taisei&';
+    url += 'username=' + username + '&';
 
     var today = new Date();
     var year = today.getFullYear();
@@ -97,7 +103,6 @@ const Editor = () => {
     // ダウンロードリンクの探索
     var time = 0;
     const intervalId = setInterval(() => {
-      //if (iframe.contentWindow.document.querySelector('#downloadlink') != null) {
       time++;
       if (time > 4 * blocks.length) {
         clearInterval(intervalId); //intervalIdをclearIntervalで指定している
@@ -115,6 +120,20 @@ const Editor = () => {
     document.getElementById('after_download').style.display = 'none';
   }, [xml]);
 
+  useEffect(() => {
+    const name = db
+      .collection('users')
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          let userdata = doc.data();
+          if (userdata.mail === user.email) {
+            setUsername(userdata.username);
+          }
+        });
+      });
+  }, []);
+
   return (
     <div css={Background}>
       <div class="row h-100">
@@ -129,7 +148,7 @@ const Editor = () => {
           <div class="h-25 pt-3">
             <textarea
               id="code"
-              class="h-100 border "
+              class="note h-100 border"
               style={{ width: '100%', resize: 'none' }}
               value={javascriptCode}
               readOnly
@@ -138,15 +157,23 @@ const Editor = () => {
         </div>
         <div class="col-md-5 bg-light">
           <div class="row h-25 border py-3">
-            <p>なんかせつめいがあるといい</p>
+            <p>1：ひだりのがめんで、ブロックをくみたててみよう！</p>
+            <p>2：「どうがをみる」ボタンで、どうがをかくにんしてみてね！</p>
+            <p>3：「しょうさいをきめる」ボタンで、にっきのじょうほうをにゅうりょくしていこう！</p>
           </div>
           <div class="row h-50 border py-3">
-            <Movie clickEvent={getQueryStrings} handleDisplay={checkDouwnloadLink} hideDescBtn={hideDescBtn}></Movie>
+            <Movie
+              clickEvent={getQueryStrings}
+              handleDisplay={checkDouwnloadLink}
+              hideDescBtn={hideDescBtn}
+              username={username}
+            ></Movie>
           </div>
           <div class="row h-25 border py-3 mt-1" id="after_download">
-            <p>
-              このどうがでいいなら、つぎにしょうさいをきめてね。<br></br>へんこうするなら、ブロックをそうさしてね。
-            </p>
+            <div class="h-50">
+              <p>このどうがでいいなら、つぎにしょうさいをきめてね。</p>
+              <p>へんこうするなら、ブロックをそうさしてね。</p>
+            </div>
             <div class="d-grid gap-2 col-6 mx-auto mt-3">
               <button type="button" class="btn btn-outline-info" onClick={moveForm}>
                 しょうさいをきめる
@@ -161,9 +188,9 @@ const Editor = () => {
 
 const Background = css`
   width: 100%;
-  height: 90%;
+  height: 85%;
   position: absolute;
-  top: 10%;
+  top: 12%;
   left: 50%;
   transform: translate(-50%, 0%);
   background-color: #8ac7de;

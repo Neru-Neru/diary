@@ -7,10 +7,10 @@ import React from 'react';
 const News = () => {
   return (
     <div css={Background}>
-      <div class="row h-25 my-2 border-top border-bottom">
+      <div css={NewsBlock} class="row h-25 my-2 border-top border-bottom">
         <div class="col-2 h-100 d-flex align-items-center justify-content-center">
           <div
-            class="border d-flex align-items-center justify-content-center bg-success"
+            class="border d-flex align-items-center justify-content-center bg-light"
             style={{ width: '100px', height: '100px', 'border-radius': '50%' }}
           >
             <p class="m-0" style={{ 'text-align': 'center', 'line-height': '50%', 'font-size': '30px' }}>
@@ -26,14 +26,14 @@ const News = () => {
               テストべんきょうもがんばってて、とてもえらいね！
             </p>
           </div>
-          <p class="text-muted text-end">2021/09/17</p>
+          <p class="text-muted text-end mr-2">2021/09/17</p>
         </div>
       </div>
 
-      <div class="row h-25 my-2 border-top border-bottom">
+      <div css={NewsBlock} class="row h-25 my-2 border-top border-bottom">
         <div class="col-2 h-100 d-flex align-items-center justify-content-center">
           <div
-            class="border d-flex align-items-center justify-content-center bg-success"
+            class="border d-flex align-items-center justify-content-center bg-light"
             style={{ width: '100px', height: '100px', 'border-radius': '50%' }}
           >
             <p class="m-0" style={{ 'text-align': 'center', 'line-height': '50%', 'font-size': '30px' }}>
@@ -49,7 +49,7 @@ const News = () => {
               夜ごはんはハンバーガーだったんだ。おいしいよね。せんせいも大好きだよ。
             </p>
           </div>
-          <p class="text-muted text-end">2021/09/10</p>
+          <p class="text-muted text-end mr-2">2021/09/10</p>
         </div>
       </div>
     </div>
@@ -58,13 +58,17 @@ const News = () => {
 
 const Background = css`
   width: 100%;
-  height: 90%;
+  height: 85%;
   position: absolute;
-  top: 10%;
+  top: 12%;
   left: 50%;
   transform: translate(-50%, 0%);
   background-color: #8ac7de;
   padding: 0 15%;
+`;
+
+const NewsBlock = css`
+  background-color: #dcf2fa;
 `;
 
 export default News;

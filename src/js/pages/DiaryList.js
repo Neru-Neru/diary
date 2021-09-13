@@ -1,3 +1,7 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { css, jsx } from '@emotion/react';
+
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';
@@ -56,5 +60,16 @@ const DiaryList = (props) => {
     </div>
   );
 };
+
+const Background = css`
+  width: 100%;
+  height: 85%;
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  background-color: #8ac7de;
+  padding: 0 15%;
+`;
 
 export default DiaryList;

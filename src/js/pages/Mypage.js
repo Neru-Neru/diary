@@ -20,7 +20,7 @@ const Mypage = () => {
   const moveMyDiaryList = (date) => {
     // 日付選択したら、その動画が表示される
     let url = 'https://terminal-8c860.web.app/load-day?';
-    url += 'username=' + user.username;
+    url += 'username=' + username;
     url += '&date=' + date;
     fetch(url, {
       mode: 'cors',
@@ -103,9 +103,9 @@ const Mypage = () => {
 
 const Background = css`
   width: 100%;
-  height: 90%;
+  height: 85%;
   position: absolute;
-  top: 10%;
+  top: 12%;
   left: 50%;
   transform: translate(-50%, 0%);
   background-color: #8ac7de;

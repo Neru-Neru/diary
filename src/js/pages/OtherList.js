@@ -6,13 +6,17 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import Calendar from './Calender';
 import DiaryList from './DiaryList';
+import { useAuthContext } from '../../context/AuthContext';
+import { db } from '../../firebase';
 
 const OtherList = () => {
   const [imglist, setImagelist] = useState([]);
   const [daylist, setDaylist] = useState([]);
   const [day, setDay] = useState('');
+  const [username, setUsername] = useState('');
 
   const history = useHistory();
+  const { user } = useAuthContext();
 
   useEffect(() => {
     var today = new Date();
@@ -20,6 +24,17 @@ const OtherList = () => {
     var month = ('00' + (today.getMonth() + 1)).slice(-2);
     var day = ('00' + today.getDate()).slice(-2);
     moveDiaryOfDate(year + '-' + month + '-' + day);
+    const name = db
+      .collection('users')
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          let userdata = doc.data();
+          if (userdata.mail === user.email) {
+            setUsername(userdata.username);
+          }
+        });
+      });
   }, []);
 
   const moveDiaryOfDate = (date) => {
@@ -47,14 +62,16 @@ const OtherList = () => {
     console.log(json);
     for (let i of Object.keys(json)) {
       // 各動画ごとに生成
-      let tmp = {
-        username: i,
-        date: date,
-        title: json[i].title,
-        desc: json[i].desc,
-        query: json[i].query,
-      };
-      data.push(tmp);
+      if (i !== username) {
+        let tmp = {
+          username: i,
+          date: date,
+          title: json[i].title,
+          desc: json[i].desc,
+          query: json[i].query,
+        };
+        data.push(tmp);
+      }
     }
     return data;
   };
@@ -83,9 +100,9 @@ const OtherList = () => {
 
 const Background = css`
   width: 100%;
-  height: 90%;
+  height: 85%;
   position: absolute;
-  top: 10%;
+  top: 12%;
   left: 50%;
   transform: translate(-50%, 0%);
   background-color: #8ac7de;

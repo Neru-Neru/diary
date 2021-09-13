@@ -1,3 +1,7 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { css, jsx } from '@emotion/react';
+
 import React, { useState, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 import { auth } from '../../firebase';
@@ -46,7 +50,7 @@ const SignIn = () => {
   };
 
   return (
-    <div class="container">
+    <div css={Background}>
       <div class=" d-flex justify-content-center">
         <h2 class="text-center">ログインがめん</h2>
       </div>
@@ -81,7 +85,7 @@ const SignIn = () => {
           }}
           variant="contained"
           color="primary"
-          class="mt-3"
+          class="mt-3 text-end"
         >
           ログインする
         </Button>
@@ -89,5 +93,16 @@ const SignIn = () => {
     </div>
   );
 };
+
+const Background = css`
+  width: 100%;
+  height: 85%;
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  background-color: #8ac7de;
+  padding: 0 15%;
+`;
 
 export default SignIn;

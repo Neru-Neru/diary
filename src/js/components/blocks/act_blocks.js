@@ -1,6 +1,6 @@
 import Blockly from 'blockly';
 
-Blockly.Blocks['run'] = {
+Blockly.Blocks['.run'] = {
   init: function () {
     this.appendDummyInput().appendField('はしる');
     this.setInputsInline(false);
@@ -10,11 +10,11 @@ Blockly.Blocks['run'] = {
   },
 };
 
-Blockly.JavaScript['run'] = function (block) {
+Blockly.JavaScript['.run'] = function (block) {
   var code = 'はしる';
   return code;
 };
-Blockly.Blocks['eat'] = {
+Blockly.Blocks['.eat'] = {
   init: function () {
     this.appendDummyInput().appendField('をたべる');
     this.setInputsInline(false);
@@ -24,11 +24,11 @@ Blockly.Blocks['eat'] = {
   },
 };
 
-Blockly.JavaScript['eat'] = function (block) {
+Blockly.JavaScript['.eat'] = function (block) {
   var code = 'たべる';
   return code;
 };
-Blockly.Blocks['play'] = {
+Blockly.Blocks['.play'] = {
   init: function () {
     this.appendDummyInput().appendField('であそぶ');
     this.setInputsInline(false);
@@ -38,11 +38,11 @@ Blockly.Blocks['play'] = {
   },
 };
 
-Blockly.JavaScript['play'] = function (block) {
+Blockly.JavaScript['.play'] = function (block) {
   var code = 'であそぶ';
   return code;
 };
-Blockly.Blocks['ride'] = {
+Blockly.Blocks['.ride'] = {
   init: function () {
     this.appendDummyInput().appendField('にのる');
     this.setInputsInline(false);
@@ -52,11 +52,11 @@ Blockly.Blocks['ride'] = {
   },
 };
 
-Blockly.JavaScript['ride'] = function (block) {
+Blockly.JavaScript['.ride'] = function (block) {
   var code = 'にのる';
   return code;
 };
-Blockly.Blocks['cook'] = {
+Blockly.Blocks['.cook'] = {
   init: function () {
     this.appendDummyInput().appendField('をりょうりする');
     this.setInputsInline(false);
@@ -66,11 +66,11 @@ Blockly.Blocks['cook'] = {
   },
 };
 
-Blockly.JavaScript['cook'] = function (block) {
+Blockly.JavaScript['.cook'] = function (block) {
   var code = 'をりょうりする';
   return code;
 };
-Blockly.Blocks['getup'] = {
+Blockly.Blocks['.getup'] = {
   init: function () {
     this.appendDummyInput().appendField('おきる');
     this.setInputsInline(false);
@@ -80,11 +80,11 @@ Blockly.Blocks['getup'] = {
   },
 };
 
-Blockly.JavaScript['getup'] = function (block) {
+Blockly.JavaScript['.getup'] = function (block) {
   var code = 'おきる';
   return code;
 };
-Blockly.Blocks['sleep'] = {
+Blockly.Blocks['.sleep'] = {
   init: function () {
     this.appendDummyInput().appendField('ねる');
     this.setInputsInline(false);
@@ -94,11 +94,11 @@ Blockly.Blocks['sleep'] = {
   },
 };
 
-Blockly.JavaScript['sleep'] = function (block) {
+Blockly.JavaScript['.sleep'] = function (block) {
   var code = 'ねる';
   return code;
 };
-Blockly.Blocks['buy'] = {
+Blockly.Blocks['.buy'] = {
   init: function () {
     this.appendDummyInput().appendField('をかう');
     this.setInputsInline(false);
@@ -108,11 +108,11 @@ Blockly.Blocks['buy'] = {
   },
 };
 
-Blockly.JavaScript['buy'] = function (block) {
+Blockly.JavaScript['.buy'] = function (block) {
   var code = 'をかう';
   return code;
 };
-Blockly.Blocks['practice'] = {
+Blockly.Blocks['.practice'] = {
   init: function () {
     this.appendDummyInput().appendField('をれんしゅうする');
     this.setInputsInline(false);
@@ -122,11 +122,11 @@ Blockly.Blocks['practice'] = {
   },
 };
 
-Blockly.JavaScript['practice'] = function (block) {
+Blockly.JavaScript['.practice'] = function (block) {
   var code = 'をれんしゅうする';
   return code;
 };
-Blockly.Blocks['watch'] = {
+Blockly.Blocks['.watch'] = {
   init: function () {
     this.appendDummyInput().appendField('をみる');
     this.setInputsInline(false);
@@ -136,11 +136,11 @@ Blockly.Blocks['watch'] = {
   },
 };
 
-Blockly.JavaScript['watch'] = function (block) {
+Blockly.JavaScript['.watch'] = function (block) {
   var code = 'をみる';
   return code;
 };
-Blockly.Blocks['draw'] = {
+Blockly.Blocks['.draw'] = {
   init: function () {
     this.appendDummyInput().appendField('をかく');
     this.setInputsInline(false);
@@ -150,35 +150,35 @@ Blockly.Blocks['draw'] = {
   },
 };
 
-Blockly.JavaScript['draw'] = function (block) {
-  var code = 'をかく';
+Blockly.JavaScript['.draw'] = function (block) {
+  var code = 'をえがく';
   return code;
 };
-Blockly.Blocks['make'] = {
+Blockly.Blocks['.make'] = {
   init: function () {
-    this.appendDummyInput().appendField('');
+    this.appendDummyInput().appendField('をつくる');
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
     this.setColour(230);
-    this.setTooltip('');
+    this.setTooltip('をつくる');
   },
 };
 
-Blockly.JavaScript['make'] = function (block) {
-  var code = '';
+Blockly.JavaScript['.make'] = function (block) {
+  var code = 'をつくる';
   return code;
 };
-Blockly.Blocks['study'] = {
+Blockly.Blocks['.study'] = {
   init: function () {
-    this.appendDummyInput().appendField('べんきょうする');
+    this.appendDummyInput().appendField('べんきょうをする');
     this.setInputsInline(false);
     //this.setPreviousStatement(true, null);
     this.setColour(230);
-    this.setTooltip('べんきょうする');
+    this.setTooltip('べんきょうをする');
   },
 };
 
-Blockly.JavaScript['study'] = function (block) {
-  var code = 'べんきょうする';
+Blockly.JavaScript['.study'] = function (block) {
+  var code = 'べんきょうをする';
   return code;
 };

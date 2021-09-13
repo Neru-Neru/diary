@@ -69,3 +69,23 @@ pre {
 .fc-day-today {
   cursor: pointer;
 }
+
+.note {
+  width: 600px;
+  font-size: 16px;
+  color: #222;
+  padding: 0 1rem;
+  background-color: rgb(255, 252, 236);
+  background-image: linear-gradient(rgba(126, 175, 240, 0.116) 0.1em, transparent 0.1em);
+  background-size: auto 2rem;
+  line-height: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.note > p {
+  margin: 0 0 2rem;
+}
+.note > p:first-letter {
+  margin-left: 1rem;
+}

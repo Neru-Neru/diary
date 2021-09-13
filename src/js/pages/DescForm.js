@@ -1,3 +1,7 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { css, jsx } from '@emotion/react';
+
 import React, { useState } from 'react';
 
 const DescForm = (props) => {
@@ -5,6 +9,8 @@ const DescForm = (props) => {
   const [desc, setDesc] = useState('');
 
   const { clickEvent } = props;
+
+  const arg = props.history.location.state.tile;
 
   const changeTitle = (event) => {
     setTitle(event.target.value);
@@ -18,10 +24,12 @@ const DescForm = (props) => {
 
   const handleClick = () => {
     //にっきをかくボタン
-    const { elements, actions } = clickEvent();
+    const elements = arg.elements;
+    const actions = arg.actions;
+
     let url = 'https://terminal-8c860.web.app/save?';
 
-    url += 'username=taisei&';
+    url += 'username=' + arg.username + '&';
 
     var today = new Date();
     var year = today.getFullYear();
@@ -45,7 +53,7 @@ const DescForm = (props) => {
   };
 
   var url = 'https://terminal-8c860.web.app/make-thumbnail?';
-  url += 'username=' + 'taisei' + '&';
+  url += 'username=' + arg.username + '&';
 
   let today = new Date();
   let year = today.getFullYear();
@@ -57,8 +65,8 @@ const DescForm = (props) => {
   return (
     <div>
       <div class="h-50">
-        {/*<iframe src={url} scrolling="no" width="100%" height="100%"></iframe>*/}
-        <iframe src="http://127.0.0.1:5500/make_thumbnail.html" scrolling="no" width="100%" height="470px"></iframe>
+        <iframe src={url} scrolling="no" width="100%" height="100%"></iframe>
+        {/*<iframe src="http://127.0.0.1:5500/make_thumbnail.html" scrolling="no" width="100%" height="470px"></iframe>*/}
       </div>
       <div class="h-50">
         <h4>くわしいこと</h4>

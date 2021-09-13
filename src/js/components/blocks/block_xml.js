@@ -464,5 +464,65 @@ export const Categories = {
         },
       ],
     },
+    {
+      kind: 'category',
+      name: 'アクション',
+      expanded: true,
+      colour: 300,
+      contents: [
+        {
+          kind: 'block',
+          type: '.run',
+        },
+        {
+          kind: 'block',
+          type: '.eat',
+        },
+        {
+          kind: 'block',
+          type: '.play',
+        },
+        {
+          kind: 'block',
+          type: '.ride',
+        },
+        {
+          kind: 'block',
+          type: '.cook',
+        },
+        {
+          kind: 'block',
+          type: '.getup',
+        },
+        {
+          kind: 'block',
+          type: '.sleep',
+        },
+        {
+          kind: 'block',
+          type: '.buy',
+        },
+        {
+          kind: 'block',
+          type: '.practice',
+        },
+        {
+          kind: 'block',
+          type: '.watch',
+        },
+        {
+          kind: 'block',
+          type: '.draw',
+        },
+        {
+          kind: 'block',
+          type: '.make',
+        },
+        {
+          kind: 'block',
+          type: '.study',
+        },
+      ],
+    },
   ],
 };
