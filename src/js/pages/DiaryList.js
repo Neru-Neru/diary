@@ -36,6 +36,8 @@ const DiaryList = (props) => {
     props.clickTile(tile);
   };
 
+  console.log(imageList);
+
   return (
     <div className={classes.root} class="mx-2 my-5">
       <GridList autoHeight cellHeight={200} className={classes.gridList} cols={2}>

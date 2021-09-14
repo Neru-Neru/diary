@@ -24,17 +24,6 @@ const OtherList = () => {
     var month = ('00' + (today.getMonth() + 1)).slice(-2);
     var day = ('00' + today.getDate()).slice(-2);
     moveDiaryOfDate(year + '-' + month + '-' + day);
-    const name = db
-      .collection('users')
-      .get()
-      .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          let userdata = doc.data();
-          if (userdata.mail === user.email) {
-            setUsername(userdata.username);
-          }
-        });
-      });
   }, []);
 
   const moveDiaryOfDate = (date) => {
@@ -84,7 +73,7 @@ const OtherList = () => {
   return (
     <div css={Background}>
       <div css={DiaryBg} class="row">
-        <div class="col-5 p-3">
+        <div class="col-5 p-3 h-100">
           <Calendar
             clickDay={moveDiaryOfDate}
             imageList={imglist}
@@ -93,7 +82,7 @@ const OtherList = () => {
             username={username}
           ></Calendar>
         </div>
-        <div class="col-7 p-3">
+        <div class="col-7 p-3 h-100">
           <h3>{day}のみんなのにっき</h3>
           <DiaryList imageList={daylist} clickTile={clickTile}></DiaryList>
         </div>
@@ -115,6 +104,7 @@ const Background = css`
 
 const DiaryBg = css`
   background: rgb(220 242 250);
+  height: 100%;
 `;
 
 export default OtherList;

@@ -12,7 +12,7 @@ import { db } from '../../firebase';
 const Mypage = () => {
   const [imglist, setImagelist] = useState([]);
   const [daylist, setDaylist] = useState([]);
-  const [username, setUsername] = useState('');
+  const [userstate, setUserstate] = useState({ username: '', email: '' });
   const { user } = useAuthContext();
 
   const history = useHistory();
@@ -20,8 +20,9 @@ const Mypage = () => {
   const moveMyDiaryList = (date) => {
     // 日付選択したら、その動画が表示される
     let url = 'https://terminal-8c860.web.app/load-day?';
-    url += 'username=' + username;
+    url += 'username=' + userstate.username;
     url += '&date=' + date;
+    console.log(url);
     fetch(url, {
       mode: 'cors',
     })
@@ -30,7 +31,16 @@ const Mypage = () => {
       })
       .then(function (json) {
         const daylist = handleJson(json); // jsonの処理をする
-        setDaylist(daylist); // stateを変更
+        const data = [];
+        for (let i of Object.keys(daylist)) {
+          // 各動画ごと
+          if (daylist[i].username === userstate.username) {
+            daylist[i].date = date;
+            data.push(daylist[i]);
+          }
+        }
+        console.log(data);
+        setDaylist(data); // stateを変更
       })
       .catch((e) => {
         console.log(e); // エラーをキャッチし表示
@@ -44,7 +54,7 @@ const Mypage = () => {
     for (let i of Object.keys(json)) {
       // 各動画ごとに生成
       let tmp = {
-        username: 'taisei',
+        username: i,
         date: i,
         title: json[i].title,
         desc: json[i].desc,
@@ -77,7 +87,7 @@ const Mypage = () => {
         querySnapshot.forEach((doc) => {
           let userdata = doc.data();
           if (userdata.mail === user.email) {
-            setUsername(userdata.username);
+            setUserstate({ username: userdata.username, email: userdata.mail });
           }
         });
       });
@@ -96,7 +106,7 @@ const Mypage = () => {
                 <i class="fas fa-glasses"></i>
               </p>
             </div>
-            <div class="">なまえ：{username}</div>
+            <div class="">なまえ：{userstate.username}</div>
           </div>
           <div class="h-75">
             <Calendar
@@ -104,12 +114,14 @@ const Mypage = () => {
               imageList={imglist}
               setImagelist={setImagelist}
               flg={true}
-              username={username}
+              username={userstate.username}
             ></Calendar>
           </div>
         </div>
         <div class="col-7 p-3">
-          <h3>じぶんのにっき</h3>
+          <h3 style={{ 'text-decoration': 'underline solid #ff8c00', 'text-underline-offset': '0.1em' }}>
+            じぶんのにっき
+          </h3>
           <DiaryList imageList={daylist} clickTile={clickTile}></DiaryList>
         </div>
       </div>

@@ -28,7 +28,7 @@ const Calendar = (props) => {
     const month = day.getMonth() + 1;
     const pre = year + '-' + month;
     setYearMonth(pre);
-    if (yearmonth === year + '-' + month) {
+    if (yearmonth === year + '-' + month && props.username !== '') {
       let url = 'https://terminal-8c860.web.app/load-month?';
       url += 'username=' + props.username + '&';
       url += 'month=' + year + '-' + month;
@@ -55,7 +55,7 @@ const Calendar = (props) => {
     for (let i of Object.keys(json)) {
       // 各動画ごとに生成
       let tmp = {
-        username: 'taisei',
+        username: props.username,
         date: i,
         title: json[i].title,
         desc: json[i].desc,

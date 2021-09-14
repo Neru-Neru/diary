@@ -3,12 +3,14 @@
 import { css, jsx } from '@emotion/react';
 
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 const DescForm = (props) => {
   const [title, setTitle] = useState('');
   const [desc, setDesc] = useState('');
 
   const { clickEvent } = props;
+  const history = useHistory();
 
   const arg = props.history.location.state;
 
@@ -50,6 +52,9 @@ const DescForm = (props) => {
     window.open(url, '_blank'); // 新しいタブを開き、ページを表示
     //window.close();
     //setUrl(url);
+    history.push({
+      pathname: '/otherdiary',
+    });
   };
 
   var url = 'https://terminal-8c860.web.app/make-thumbnail?';
