@@ -28,18 +28,20 @@ const OtherDiary = (props) => {
       }
       flg = !flg;
     } else {
-      ele.push(ele_dic[block[1]]);
+      console.log(block);
+      if (block[1] !== '') ele.push(ele_dic[block[1]]);
+      else ele.push('');
       flg = !flg;
     }
   }
   for (let i = 0; i < act.length; i++) {
-    ans += ele[i] + act[i];
+    ans += ele[i] + act[i] + '\n';
   }
   console.log(ans);
 
   return (
     <div css={Background}>
-      <div class="row py-5">
+      <div css={ContentBack} class="row">
         <div class="col-7">
           <Tabs>
             <TabList>
@@ -50,17 +52,27 @@ const OtherDiary = (props) => {
               <iframe src={src} scrolling="no" width="100%" height="100%"></iframe>
             </TabPanel>
             <TabPanel style={{ width: '640px', height: '360px' }}>
-              <p>{ans}</p>
+              {ans.split('\n').map((line) => (
+                <p>
+                  {line}
+                  <br />
+                </p>
+              ))}
             </TabPanel>
           </Tabs>
         </div>
         <div class="col-5">
-          <div class="p-3 border h-25 d-flex align-items-center justify-content-center">
+          <div class="my-3 p-3 border rounded-pill d-flex align-items-center justify-content-center bg-white">
             <h4 class="text-center">{arg.title}</h4>
           </div>
-          <div class="p-3 border h-75">
+          <div class="p-3 border h-75 rounded-3 bg-white">
             <p>{arg.desc}</p>
           </div>
+        </div>
+        <div>
+          <button onClick={() => this.props.history.goBack()} class="btn btn-outline-secondary">
+            もどる
+          </button>
         </div>
       </div>
     </div>
@@ -78,4 +90,9 @@ const Background = css`
   padding: 0 10%;
 `;
 
+const ContentBack = css`
+  height: 100%;
+  padding: 5% 5%;
+  background: rgb(220, 242, 250);
+`;
 export default OtherDiary;

@@ -49,10 +49,9 @@ const DescForm = (props) => {
 
     url += '&title=' + title + '&desc=' + desc;
     console.log(url);
-    window.open(url, '_blank'); // 新しいタブを開き、ページを表示
-    window.close();
+    window.open(url, '_blank').close();
     history.push({
-      pathname: '/otherdiary',
+      pathname: '/',
     });
   };
 

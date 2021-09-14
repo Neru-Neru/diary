@@ -133,7 +133,7 @@ const Editor = () => {
         querySnapshot.forEach((doc) => {
           let userdata = doc.data();
           if (userdata.mail === user.email) {
-            setUsername(userdata.mail);
+            setUsername(userdata.username);
           }
         });
       });

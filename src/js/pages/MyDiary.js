@@ -28,18 +28,19 @@ const MyDiary = (props) => {
       }
       flg = !flg;
     } else {
-      ele.push(ele_dic[block[1]]);
+      if (block[1] !== '') ele.push(ele_dic[block[1]]);
+      else ele.push('');
       flg = !flg;
     }
   }
   for (let i = 0; i < act.length; i++) {
-    ans += ele[i] + act[i];
+    ans += ele[i] + act[i] + '\n';
   }
   console.log(ans);
 
   return (
     <div css={Background}>
-      <div class="row py-5">
+      <div css={ContentBack} class="row">
         <div class="col-7">
           <Tabs indicatorColor="primary" textColor="primary" centered>
             <TabList>
@@ -50,7 +51,12 @@ const MyDiary = (props) => {
               <iframe src={src} scrolling="no" width="100%" height="100%"></iframe>
             </TabPanel>
             <TabPanel style={{ width: '640px', height: '360px' }}>
-              <p>{ans}</p>
+              {ans.split('\n').map((line) => (
+                <p>
+                  {line}
+                  <br />
+                </p>
+              ))}
             </TabPanel>
           </Tabs>
         </div>
@@ -61,6 +67,11 @@ const MyDiary = (props) => {
           <div class="p-3 border h-75 rounded-3 bg-white">
             <p>{arg.desc}</p>
           </div>
+        </div>
+        <div>
+          <button onClick={() => props.history.goBack()} class="btn btn-outline-secondary">
+            もどる
+          </button>
         </div>
       </div>
     </div>
@@ -76,6 +87,12 @@ const Background = css`
   transform: translate(-50%, 0%);
   background-color: #8ac7de;
   padding: 0 10%;
+`;
+
+const ContentBack = css`
+  height: 100%;
+  padding: 0 5%;
+  background: rgb(220, 242, 250);
 `;
 
 export default MyDiary;

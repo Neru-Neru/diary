@@ -40,7 +40,7 @@ const DiaryList = (props) => {
 
   return (
     <div className={classes.root} class="mx-2 my-5">
-      <GridList autoHeight cellHeight={200} className={classes.gridList} cols={2}>
+      <GridList autoHeight cellHeight={250} className={classes.gridList} cols={2}>
         {imageList.map((tile) => (
           <GridListTile
             key={tile.img}
@@ -48,6 +48,7 @@ const DiaryList = (props) => {
             onClick={() => {
               handleClick(tile);
             }}
+            style={{ cursor: 'pointer' }}
           >
             {
               <img
