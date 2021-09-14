@@ -1,5 +1,5 @@
 export const act_dic = {
-  run: 'はしる',
+  run: 'さんぽする',
   eat: 'をたべる',
   play: 'であそぶ',
   ride: 'にのる',

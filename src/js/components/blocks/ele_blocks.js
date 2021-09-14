@@ -4,7 +4,7 @@ Blockly.Blocks['apple'] = {
   init: function () {
     this.appendDummyInput().appendField('りんご');
     this.setNextStatement(true, null);
-    this.setColour(0);
+    this.setColour(20);
     this.setTooltip('りんご');
     this.setHelpUrl('');
   },
@@ -17,7 +17,7 @@ Blockly.Blocks['potato_chips'] = {
   init: function () {
     this.appendDummyInput().appendField('ポテトチップス');
     this.setNextStatement(true, null);
-    this.setColour(0);
+    this.setColour(20);
     this.setTooltip('ポテトチップス');
     this.setHelpUrl('');
   },
@@ -30,7 +30,7 @@ Blockly.Blocks['cat'] = {
   init: function () {
     this.appendDummyInput().appendField('ねこ');
     this.setNextStatement(true, null);
-    this.setColour(40);
+    this.setColour(60);
     this.setTooltip('ねこ');
     this.setHelpUrl('');
   },
@@ -56,7 +56,7 @@ Blockly.Blocks['cloud2'] = {
   init: function () {
     this.appendDummyInput().appendField('くも');
     this.setNextStatement(true, null);
-    this.setColour(60);
+    this.setColour(80);
     this.setTooltip('くも');
     this.setHelpUrl('');
   },
@@ -82,7 +82,7 @@ Blockly.Blocks['guiter'] = {
   init: function () {
     this.appendDummyInput().appendField('ギター');
     this.setNextStatement(true, null);
-    this.setColour(20);
+    this.setColour(40);
     this.setTooltip('ギター');
     this.setHelpUrl('');
   },
@@ -95,7 +95,7 @@ Blockly.Blocks['guiter_p'] = {
   init: function () {
     this.appendDummyInput().appendField('ギター2');
     this.setNextStatement(true, null);
-    this.setColour(20);
+    this.setColour(40);
     this.setTooltip('ギター2');
     this.setHelpUrl('');
   },
@@ -121,7 +121,7 @@ Blockly.Blocks['basket'] = {
   init: function () {
     this.appendDummyInput().appendField('バスケット');
     this.setNextStatement(true, null);
-    this.setColour(80);
+    this.setColour(100);
     this.setTooltip('バスケット');
     this.setHelpUrl('');
   },
@@ -134,7 +134,7 @@ Blockly.Blocks['biscuit'] = {
   init: function () {
     this.appendDummyInput().appendField('ビスケット');
     this.setNextStatement(true, null);
-    this.setColour(0);
+    this.setColour(20);
     this.setTooltip('ビスケット');
     this.setHelpUrl('');
   },
@@ -147,7 +147,7 @@ Blockly.Blocks['cooking'] = {
   init: function () {
     this.appendDummyInput().appendField('なべ');
     this.setNextStatement(true, null);
-    this.setColour(100);
+    this.setColour(120);
     this.setTooltip('なべ');
     this.setHelpUrl('');
   },
@@ -160,7 +160,7 @@ Blockly.Blocks['sun'] = {
   init: function () {
     this.appendDummyInput().appendField('たいよう');
     this.setNextStatement(true, null);
-    this.setColour(60);
+    this.setColour(80);
     this.setTooltip('たいよう');
     this.setHelpUrl('');
   },
@@ -173,7 +173,7 @@ Blockly.Blocks['car'] = {
   init: function () {
     this.appendDummyInput().appendField('くるま');
     this.setNextStatement(true, null);
-    this.setColour(120);
+    this.setColour(140);
     this.setTooltip('くるま');
     this.setHelpUrl('');
   },
@@ -186,7 +186,7 @@ Blockly.Blocks['hammer'] = {
   init: function () {
     this.appendDummyInput().appendField('ハンマー');
     this.setNextStatement(true, null);
-    this.setColour(100);
+    this.setColour(120);
     this.setTooltip('ハンマー');
     this.setHelpUrl('');
   },
@@ -199,7 +199,7 @@ Blockly.Blocks['bed'] = {
   init: function () {
     this.appendDummyInput().appendField('ベッド');
     this.setNextStatement(true, null);
-    this.setColour(140);
+    this.setColour(180);
     this.setTooltip('ベッド');
     this.setHelpUrl('');
   },
@@ -212,7 +212,7 @@ Blockly.Blocks['shinkansen'] = {
   init: function () {
     this.appendDummyInput().appendField('しんかんせん');
     this.setNextStatement(true, null);
-    this.setColour(120);
+    this.setColour(140);
     this.setTooltip('しんかんせん');
     this.setHelpUrl('');
   },
@@ -225,7 +225,7 @@ Blockly.Blocks['rain'] = {
   init: function () {
     this.appendDummyInput().appendField('あめ');
     this.setNextStatement(true, null);
-    this.setColour(60);
+    this.setColour(80);
     this.setTooltip('あめ');
     this.setHelpUrl('');
   },
@@ -264,7 +264,7 @@ Blockly.Blocks['convini'] = {
   init: function () {
     this.appendDummyInput().appendField('コンビニ');
     this.setNextStatement(true, null);
-    this.setColour(180);
+    this.setColour(200);
     this.setTooltip('コンビニ');
     this.setHelpUrl('');
   },
@@ -277,7 +277,7 @@ Blockly.Blocks['haburashi'] = {
   init: function () {
     this.appendDummyInput().appendField('はブラシ');
     this.setNextStatement(true, null);
-    this.setColour(100);
+    this.setColour(120);
     this.setTooltip('はブラシ');
     this.setHelpUrl('');
   },
@@ -316,7 +316,7 @@ Blockly.Blocks['cake'] = {
   init: function () {
     this.appendDummyInput().appendField('ケーキ');
     this.setNextStatement(true, null);
-    this.setColour(0);
+    this.setColour(20);
     this.setTooltip('ケーキ');
     this.setHelpUrl('');
   },
@@ -329,7 +329,7 @@ Blockly.Blocks['cake (1)'] = {
   init: function () {
     this.appendDummyInput().appendField('ケーキ1');
     this.setNextStatement(true, null);
-    this.setColour(0);
+    this.setColour(20);
     this.setTooltip('ケーキ1');
     this.setHelpUrl('');
   },
@@ -342,7 +342,7 @@ Blockly.Blocks['smartphone'] = {
   init: function () {
     this.appendDummyInput().appendField('スマートフォン');
     this.setNextStatement(true, null);
-    this.setColour(100);
+    this.setColour(120);
     this.setTooltip('スマートフォン');
     this.setHelpUrl('');
   },
@@ -355,7 +355,7 @@ Blockly.Blocks['sketchbook'] = {
   init: function () {
     this.appendDummyInput().appendField('スケッチブック');
     this.setNextStatement(true, null);
-    this.setColour(100);
+    this.setColour(140);
     this.setTooltip('スケッチブック');
     this.setHelpUrl('');
   },
@@ -368,7 +368,7 @@ Blockly.Blocks['note_pc'] = {
   init: function () {
     this.appendDummyInput().appendField('ノートパソコン');
     this.setNextStatement(true, null);
-    this.setColour(100);
+    this.setColour(120);
     this.setTooltip('ノートパソコン');
     this.setHelpUrl('');
   },
@@ -394,7 +394,7 @@ Blockly.Blocks['baseball'] = {
   init: function () {
     this.appendDummyInput().appendField('やきゅう');
     this.setNextStatement(true, null);
-    this.setColour(80);
+    this.setColour(100);
     this.setTooltip('やきゅう');
     this.setHelpUrl('');
   },
@@ -407,7 +407,7 @@ Blockly.Blocks['stadium_soccer'] = {
   init: function () {
     this.appendDummyInput().appendField('サッカースタジアム');
     this.setNextStatement(true, null);
-    this.setColour(180);
+    this.setColour(200);
     this.setTooltip('サッカースタジアム');
     this.setHelpUrl('');
   },
@@ -420,7 +420,7 @@ Blockly.Blocks['moon'] = {
   init: function () {
     this.appendDummyInput().appendField('つき');
     this.setNextStatement(true, null);
-    this.setColour(180);
+    this.setColour(200);
     this.setTooltip('つき');
     this.setHelpUrl('');
   },
@@ -446,7 +446,7 @@ Blockly.Blocks['suimin'] = {
   init: function () {
     this.appendDummyInput().appendField('すいみん');
     this.setNextStatement(true, null);
-    this.setColour(200);
+    this.setColour(220);
     this.setTooltip('すいみん');
     this.setHelpUrl('');
   },
@@ -485,7 +485,7 @@ Blockly.Blocks['soccer'] = {
   init: function () {
     this.appendDummyInput().appendField('サッカー');
     this.setNextStatement(true, null);
-    this.setColour(80);
+    this.setColour(100);
     this.setTooltip('サッカー');
     this.setHelpUrl('');
   },
@@ -498,7 +498,7 @@ Blockly.Blocks['wake-up_watch'] = {
   init: function () {
     this.appendDummyInput().appendField('めざましどけい');
     this.setNextStatement(true, null);
-    this.setColour(100);
+    this.setColour(120);
     this.setTooltip('めざましどけい');
     this.setHelpUrl('');
   },
@@ -511,7 +511,7 @@ Blockly.Blocks['stadium_baseball'] = {
   init: function () {
     this.appendDummyInput().appendField('やきゅうじょう');
     this.setNextStatement(true, null);
-    this.setColour(180);
+    this.setColour(200);
     this.setTooltip('やきゅうじょう');
     this.setHelpUrl('');
   },
@@ -524,7 +524,7 @@ Blockly.Blocks['softcream'] = {
   init: function () {
     this.appendDummyInput().appendField('ソフトクリーム');
     this.setNextStatement(true, null);
-    this.setColour(0);
+    this.setColour(20);
     this.setTooltip('ソフトクリーム');
     this.setHelpUrl('');
   },
@@ -537,7 +537,7 @@ Blockly.Blocks['tv'] = {
   init: function () {
     this.appendDummyInput().appendField('テレビ');
     this.setNextStatement(true, null);
-    this.setColour(100);
+    this.setColour(120);
     this.setTooltip('テレビ');
     this.setHelpUrl('');
   },
@@ -550,7 +550,7 @@ Blockly.Blocks['choko'] = {
   init: function () {
     this.appendDummyInput().appendField('チョコレート');
     this.setNextStatement(true, null);
-    this.setColour(0);
+    this.setColour(20);
     this.setTooltip('チョコレート');
     this.setHelpUrl('');
   },
@@ -589,7 +589,7 @@ Blockly.Blocks['volleyball'] = {
   init: function () {
     this.appendDummyInput().appendField('バレーボール');
     this.setNextStatement(true, null);
-    this.setColour(80);
+    this.setColour(100);
     this.setTooltip('バレーボール');
     this.setHelpUrl('');
   },
@@ -602,7 +602,7 @@ Blockly.Blocks['saxplayer_woman'] = {
   init: function () {
     this.appendDummyInput().appendField('サックス');
     this.setNextStatement(true, null);
-    this.setColour(200);
+    this.setColour(40);
     this.setTooltip('サックス');
     this.setHelpUrl('');
   },
@@ -615,7 +615,7 @@ Blockly.Blocks['randoseru'] = {
   init: function () {
     this.appendDummyInput().appendField('ランドセル');
     this.setNextStatement(true, null);
-    this.setColour(100);
+    this.setColour(140);
     this.setTooltip('ランドセル');
     this.setHelpUrl('');
   },
@@ -628,7 +628,7 @@ Blockly.Blocks['sofa'] = {
   init: function () {
     this.appendDummyInput().appendField('ソファー');
     this.setNextStatement(true, null);
-    this.setColour(140);
+    this.setColour(180);
     this.setTooltip('ソファー');
     this.setHelpUrl('');
   },
@@ -641,7 +641,7 @@ Blockly.Blocks['kaminari'] = {
   init: function () {
     this.appendDummyInput().appendField('かみなり');
     this.setNextStatement(true, null);
-    this.setColour(60);
+    this.setColour(80);
     this.setTooltip('かみなり');
     this.setHelpUrl('');
   },
@@ -667,7 +667,7 @@ Blockly.Blocks['game_macine'] = {
   init: function () {
     this.appendDummyInput().appendField('ゲームマシーン');
     this.setNextStatement(true, null);
-    this.setColour(180);
+    this.setColour(200);
     this.setTooltip('ゲームマシーン');
     this.setHelpUrl('');
   },
@@ -680,7 +680,7 @@ Blockly.Blocks['cloud'] = {
   init: function () {
     this.appendDummyInput().appendField('くも1');
     this.setNextStatement(true, null);
-    this.setColour(60);
+    this.setColour(80);
     this.setTooltip('くも1');
     this.setHelpUrl('');
   },
@@ -693,7 +693,7 @@ Blockly.Blocks['girl'] = {
   init: function () {
     this.appendDummyInput().appendField('おんなのこ');
     this.setNextStatement(true, null);
-    this.setColour(200);
+    this.setColour(220);
     this.setTooltip('おんなのこ');
     this.setHelpUrl('');
   },
@@ -706,7 +706,7 @@ Blockly.Blocks['book'] = {
   init: function () {
     this.appendDummyInput().appendField('ほん');
     this.setNextStatement(true, null);
-    this.setColour(100);
+    this.setColour(140);
     this.setTooltip('ほん');
     this.setHelpUrl('');
   },
@@ -719,7 +719,7 @@ Blockly.Blocks['train'] = {
   init: function () {
     this.appendDummyInput().appendField('でんしゃ');
     this.setNextStatement(true, null);
-    this.setColour(120);
+    this.setColour(140);
     this.setTooltip('でんしゃ');
     this.setHelpUrl('');
   },
@@ -732,7 +732,7 @@ Blockly.Blocks['house'] = {
   init: function () {
     this.appendDummyInput().appendField('いえ');
     this.setNextStatement(true, null);
-    this.setColour(180);
+    this.setColour(200);
     this.setTooltip('いえ');
     this.setHelpUrl('');
   },
@@ -771,7 +771,7 @@ Blockly.Blocks['tennis'] = {
   init: function () {
     this.appendDummyInput().appendField('テニス');
     this.setNextStatement(true, null);
-    this.setColour(80);
+    this.setColour(100);
     this.setTooltip('テニス');
     this.setHelpUrl('');
   },
@@ -810,7 +810,7 @@ Blockly.Blocks['snow'] = {
   init: function () {
     this.appendDummyInput().appendField('ゆき');
     this.setNextStatement(true, null);
-    this.setColour(60);
+    this.setColour(80);
     this.setTooltip('ゆき');
     this.setHelpUrl('');
   },
@@ -849,7 +849,7 @@ Blockly.Blocks['bicycle'] = {
   init: function () {
     this.appendDummyInput().appendField('じてんしゃ');
     this.setNextStatement(true, null);
-    this.setColour(120);
+    this.setColour(140);
     this.setTooltip('じてんしゃ');
     this.setHelpUrl('');
   },
@@ -862,7 +862,7 @@ Blockly.Blocks['pallet'] = {
   init: function () {
     this.appendDummyInput().appendField('パレット');
     this.setNextStatement(true, null);
-    this.setColour(100);
+    this.setColour(140);
     this.setTooltip('パレット');
     this.setHelpUrl('');
   },
@@ -875,7 +875,7 @@ Blockly.Blocks['shibainu'] = {
   init: function () {
     this.appendDummyInput().appendField('しばいぬ');
     this.setNextStatement(true, null);
-    this.setColour(40);
+    this.setColour(60);
     this.setTooltip('しばいぬ');
     this.setHelpUrl('');
   },
@@ -888,7 +888,7 @@ Blockly.Blocks['singer'] = {
   init: function () {
     this.appendDummyInput().appendField('シンガー');
     this.setNextStatement(true, null);
-    this.setColour(200);
+    this.setColour(220);
     this.setTooltip('シンガー');
     this.setHelpUrl('');
   },
@@ -901,7 +901,7 @@ Blockly.Blocks['teacher'] = {
   init: function () {
     this.appendDummyInput().appendField('せんせい');
     this.setNextStatement(true, null);
-    this.setColour(200);
+    this.setColour(220);
     this.setTooltip('せんせい');
     this.setHelpUrl('');
   },
@@ -914,7 +914,7 @@ Blockly.Blocks['airliner'] = {
   init: function () {
     this.appendDummyInput().appendField('ひこうき');
     this.setNextStatement(true, null);
-    this.setColour(120);
+    this.setColour(140);
     this.setTooltip('ひこうき');
     this.setHelpUrl('');
   },
@@ -997,7 +997,7 @@ Blockly.Blocks['money6'] = {
   init: function () {
     this.appendDummyInput().appendField('おかね6');
     this.setNextStatement(true, null);
-    this.setColour(100);
+    this.setColour(120);
     this.setTooltip('おかね6');
     this.setHelpUrl('');
   },
@@ -1039,7 +1039,7 @@ Blockly.Blocks['pencil'] = {
   init: function () {
     this.appendDummyInput().appendField('えんぴつ');
     this.setNextStatement(true, null);
-    this.setColour(100);
+    this.setColour(140);
     this.setTooltip('えんぴつ');
     this.setHelpUrl('');
   },
@@ -1052,7 +1052,7 @@ Blockly.Blocks['kakedokei_an'] = {
   init: function () {
     this.appendDummyInput().appendField('ふるどけい');
     this.setNextStatement(true, null);
-    this.setColour(240);
+    this.setColour(180);
     this.setTooltip('ふるどけい');
     this.setHelpUrl('');
   },
@@ -1065,7 +1065,7 @@ Blockly.Blocks['clock'] = {
   init: function () {
     this.appendDummyInput().appendField('とけい');
     this.setNextStatement(true, null);
-    this.setColour(100);
+    this.setColour(120);
     this.setTooltip('とけい');
     this.setHelpUrl('');
   },
@@ -1078,7 +1078,7 @@ Blockly.Blocks['orange'] = {
   init: function () {
     this.appendDummyInput().appendField('オレンジ');
     this.setNextStatement(true, null);
-    this.setColour(0);
+    this.setColour(20);
     this.setTooltip('オレンジ');
     this.setHelpUrl('');
   },
@@ -1091,7 +1091,7 @@ Blockly.Blocks['building'] = {
   init: function () {
     this.appendDummyInput().appendField('ビル');
     this.setNextStatement(true, null);
-    this.setColour(180);
+    this.setColour(200);
     this.setTooltip('ビル');
     this.setHelpUrl('');
   },
@@ -1104,7 +1104,7 @@ Blockly.Blocks['frypan'] = {
   init: function () {
     this.appendDummyInput().appendField('フライパン');
     this.setNextStatement(true, null);
-    this.setColour(100);
+    this.setColour(120);
     this.setTooltip('フライパン');
     this.setHelpUrl('');
   },
@@ -1117,7 +1117,7 @@ Blockly.Blocks['dancei'] = {
   init: function () {
     this.appendDummyInput().appendField('ダンサー');
     this.setNextStatement(true, null);
-    this.setColour(200);
+    this.setColour(220);
     this.setTooltip('ダンサー');
     this.setHelpUrl('');
   },
@@ -1130,7 +1130,7 @@ Blockly.Blocks['8th_note'] = {
   init: function () {
     this.appendDummyInput().appendField('はちぶおんぷ');
     this.setNextStatement(true, null);
-    this.setColour(160);
+    this.setColour(180);
     this.setTooltip('はちぶおんぷ');
     this.setHelpUrl('');
   },
@@ -1143,7 +1143,7 @@ Blockly.Blocks['binder'] = {
   init: function () {
     this.appendDummyInput().appendField('バインダー');
     this.setNextStatement(true, null);
-    this.setColour(100);
+    this.setColour(140);
     this.setTooltip('バインダー');
     this.setHelpUrl('');
   },
@@ -1156,7 +1156,7 @@ Blockly.Blocks['girl_back'] = {
   init: function () {
     this.appendDummyInput().appendField('おんなのこ（せなか）');
     this.setNextStatement(true, null);
-    this.setColour(200);
+    this.setColour(220);
     this.setTooltip('おんなのこ（せなか）');
     this.setHelpUrl('');
   },
@@ -1167,14 +1167,14 @@ Blockly.JavaScript['girl_back'] = function (block) {
 };
 Blockly.Blocks['girl_front'] = {
   init: function () {
-    this.appendDummyInput().appendField('おんなのこ（しょうめん）');
+    this.appendDummyInput().appendField('おんなのこ');
     this.setNextStatement(true, null);
-    this.setColour(200);
-    this.setTooltip('おんなのこ（しょうめん）');
+    this.setColour(220);
+    this.setTooltip('おんなのこ');
     this.setHelpUrl('');
   },
 };
 Blockly.JavaScript['girl_front'] = function (block) {
-  var code = 'おんなのこ（しょうめん）';
+  var code = 'おんなのこ';
   return code;
 };

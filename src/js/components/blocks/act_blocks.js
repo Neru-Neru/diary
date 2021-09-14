@@ -2,16 +2,16 @@ import Blockly from 'blockly';
 
 Blockly.Blocks['.run'] = {
   init: function () {
-    this.appendDummyInput().appendField('はしる');
+    this.appendDummyInput().appendField('さんぽする');
     this.setInputsInline(false);
     //this.setPreviousStatement(true, null);
-    this.setColour(230);
-    this.setTooltip('はしる');
+    this.setColour(240);
+    this.setTooltip('さんぽする');
   },
 };
 
 Blockly.JavaScript['.run'] = function (block) {
-  var code = 'はしる';
+  var code = 'さんぽする';
   return code;
 };
 Blockly.Blocks['.eat'] = {
@@ -19,7 +19,7 @@ Blockly.Blocks['.eat'] = {
     this.appendDummyInput().appendField('をたべる');
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
-    this.setColour(230);
+    this.setColour(240);
     this.setTooltip('をたべる');
   },
 };
@@ -33,7 +33,7 @@ Blockly.Blocks['.play'] = {
     this.appendDummyInput().appendField('であそぶ');
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
-    this.setColour(230);
+    this.setColour(240);
     this.setTooltip('であそぶ');
   },
 };
@@ -47,7 +47,7 @@ Blockly.Blocks['.ride'] = {
     this.appendDummyInput().appendField('にのる');
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
-    this.setColour(230);
+    this.setColour(240);
     this.setTooltip('にのる');
   },
 };
@@ -61,7 +61,7 @@ Blockly.Blocks['.cook'] = {
     this.appendDummyInput().appendField('をりょうりする');
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
-    this.setColour(230);
+    this.setColour(240);
     this.setTooltip('をりょうりする');
   },
 };
@@ -75,7 +75,7 @@ Blockly.Blocks['.getup'] = {
     this.appendDummyInput().appendField('おきる');
     this.setInputsInline(false);
     //this.setPreviousStatement(true, null);
-    this.setColour(230);
+    this.setColour(240);
     this.setTooltip('おきる');
   },
 };
@@ -89,7 +89,7 @@ Blockly.Blocks['.sleep'] = {
     this.appendDummyInput().appendField('ねる');
     this.setInputsInline(false);
     //this.setPreviousStatement(true, null);
-    this.setColour(230);
+    this.setColour(240);
     this.setTooltip('ねる');
   },
 };
@@ -103,7 +103,7 @@ Blockly.Blocks['.buy'] = {
     this.appendDummyInput().appendField('をかう');
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
-    this.setColour(230);
+    this.setColour(240);
     this.setTooltip('をかう');
   },
 };
@@ -117,7 +117,7 @@ Blockly.Blocks['.practice'] = {
     this.appendDummyInput().appendField('をれんしゅうする');
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
-    this.setColour(230);
+    this.setColour(240);
     this.setTooltip('をれんしゅうする');
   },
 };
@@ -131,7 +131,7 @@ Blockly.Blocks['.watch'] = {
     this.appendDummyInput().appendField('をみる');
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
-    this.setColour(230);
+    this.setColour(240);
     this.setTooltip('をみる');
   },
 };
@@ -145,7 +145,7 @@ Blockly.Blocks['.draw'] = {
     this.appendDummyInput().appendField('をかく');
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
-    this.setColour(230);
+    this.setColour(240);
     this.setTooltip('をえがく');
   },
 };
@@ -159,7 +159,7 @@ Blockly.Blocks['.make'] = {
     this.appendDummyInput().appendField('をつくる');
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
-    this.setColour(230);
+    this.setColour(240);
     this.setTooltip('をつくる');
   },
 };
@@ -173,7 +173,7 @@ Blockly.Blocks['.study'] = {
     this.appendDummyInput().appendField('べんきょうをする');
     this.setInputsInline(false);
     //this.setPreviousStatement(true, null);
-    this.setColour(230);
+    this.setColour(240);
     this.setTooltip('べんきょうをする');
   },
 };

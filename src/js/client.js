@@ -12,6 +12,7 @@ import OtherDiary from './pages/OtherDiary';
 import DescForm from './pages/DescForm';
 import News from './pages/News';
 import SignIn from './pages/SignIn';
+import Howto from './pages/Howto';
 
 const app = document.getElementById('app');
 ReactDOM.render(
@@ -26,6 +27,7 @@ ReactDOM.render(
       <Route exact path="/deskform" component={DescForm}></Route>
       <Route exact path="/news" component={News}></Route>
       <Route exact path="/signin" component={SignIn}></Route>
+      <Route exact path="/howto" component={Howto}></Route>
     </Layout>
   </Router>,
   app

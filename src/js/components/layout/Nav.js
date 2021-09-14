@@ -18,7 +18,10 @@ const Nav = (props) => {
 
   return (
     <div
-      css={Navbar(props.location.pathname === '/' ? 20 : 12, props.location.pathname === '/signin' ? 'none' : 'block')}
+      css={Navbar(
+        props.location.pathname === '/' ? 20 : 12,
+        props.location.pathname === '/signin' || props.location.pathname == '/howto' ? 'none' : 'block'
+      )}
     >
       <Link to="/">
         <div css={NavBlock(50, 10)} style={{ display: props.location.pathname === '/' ? 'none' : 'block' }}>

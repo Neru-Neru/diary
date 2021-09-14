@@ -19,7 +19,7 @@ const Top = () => {
         <div css={Plate}>
           <img src="../../img/nab_bl_3.png" style={{ width: '100%' }}></img>
           <div css={Circle(11, 18.6, 33.4)} class="circle">
-            <Link to="/editor">
+            <Link to="/howto">
               <div css={CircleIn('#7abf66', '#fff')} class="circle-in">
                 <p css={Text(18)}>
                   つかい<br></br>かた
@@ -78,7 +78,8 @@ const Top = () => {
             プログラミングと聞くと、難しいイメージを持たれがちですが、身近な日記という題材を用いて、プログラミング経験をしてみませんか？
           </p>
           <p css={NoteP}>
-            まずは、にっきをかくボタンから始めてみてください。その後は、みんなのにっきを覗いてみたり、じぶんのにっきを確認してみたりしてください。
+            まずは、にっきをつくるボタンから始めてみてください。<br></br>
+            その後は、みんなのにっきを覗いてみたり、じぶんのにっきを確認してみたりしてください。
           </p>
         </div>
       </div>

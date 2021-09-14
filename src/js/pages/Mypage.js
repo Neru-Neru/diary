@@ -76,7 +76,7 @@ const Mypage = () => {
 
   useEffect(() => {
     setDaylist(imglist);
-    console.log(imglist);
+    console.log('set daylist');
   }, [imglist]);
 
   useEffect(() => {
@@ -96,7 +96,7 @@ const Mypage = () => {
   return (
     <div css={Background}>
       <div css={DiaryBg} class="row">
-        <div class="col-5 p-3">
+        <div class="col-5 p-3 h-100">
           <div class="d-flex h-25 pt-5">
             <div
               class="border d-flex align-items-center justify-content-center bg-light"
@@ -118,7 +118,7 @@ const Mypage = () => {
             ></Calendar>
           </div>
         </div>
-        <div class="col-7 p-3">
+        <div class="col-7 p-3 h-100">
           <h3 style={{ 'text-decoration': 'underline solid #ff8c00', 'text-underline-offset': '0.1em' }}>
             じぶんのにっき
           </h3>
@@ -142,6 +142,7 @@ const Background = css`
 
 const DiaryBg = css`
   background: rgb(220 242 250);
+  height: 100%;
 `;
 
 export default Mypage;

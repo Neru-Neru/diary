@@ -92,3 +92,8 @@ pre {
 .note > p:first-letter {
   margin-left: 1rem;
 }
+
+iframe {
+  transform: scale(1);
+  transform-origin: 50% 50%;
+}

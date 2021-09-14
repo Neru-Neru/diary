@@ -107,18 +107,22 @@ const Editor = () => {
       time++;
       if (time > 4 * blocks.length) {
         clearInterval(intervalId); //intervalIdをclearIntervalで指定している
-        document.getElementById('after_download').style.display = 'block';
+        document.getElementById('after_download').style['pointer-events'] = 'auto';
+        document.getElementById('after_download').classList.remove('disabled');
+        document.getElementById('after_download').classList.add('btn-outline-info');
       }
     }, 1000);
   };
 
   const hideDescBtn = () => {
     console.log('Hide');
-    document.getElementById('after_download').style.display = 'none';
+    document.getElementById('after_download').style['pointer-events'] = 'none';
+    document.getElementById('after_download').classList.add('disabled');
+    document.getElementById('after_download').classList.remove('btn-outline-info');
   };
 
   useEffect(() => {
-    document.getElementById('after_download').style.display = 'none';
+    document.getElementById('after_download').style['pointer-events'] = 'none';
   }, [xml]);
 
   useEffect(() => {
@@ -157,12 +161,12 @@ const Editor = () => {
           </div>
         </div>
         <div class="col-md-5 bg-light">
-          <div class="row h-25 border py-3">
+          <div class="row border py-3" style={{ height: '20%' }}>
             <p>1：ひだりのがめんで、ブロックをくみたててみよう！</p>
             <p>2：「どうがをみる」ボタンで、どうがをかくにんしてみてね！</p>
             <p>3：「しょうさいをきめる」ボタンで、にっきのじょうほうをにゅうりょくしてね！</p>
           </div>
-          <div class="row h-50 border py-3">
+          <div class="row border py-3" style={{ height: '60%' }}>
             <Movie
               clickEvent={getQueryStrings}
               handleDisplay={checkDouwnloadLink}
@@ -170,13 +174,13 @@ const Editor = () => {
               username={username}
             ></Movie>
           </div>
-          <div class="row h-25 border py-3 mt-1" id="after_download">
+          <div class="row border py-3 mt-1 text-center" style={{ height: '20%' }}>
             <div class="h-50">
               <p>このどうがでいいなら、つぎにしょうさいをきめてね。</p>
               <p>へんこうするなら、ブロックをそうさしてね。</p>
             </div>
             <div class="d-grid gap-2 col-6 mx-auto mt-3">
-              <button type="button" class="btn btn-outline-info" onClick={moveForm}>
+              <button type="button" class="btn disabled" id="after_download" onClick={moveForm}>
                 しょうさいをきめる
               </button>
             </div>

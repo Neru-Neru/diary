@@ -17,6 +17,14 @@ const Calendar = (props) => {
       var year = today.getFullYear();
       var month = ('00' + (today.getMonth() + 1)).slice(-2);
       var date = ('00' + today.getDate()).slice(-2);
+      const days = document.getElementsByClassName('fc-day');
+      for (let i of Object.keys(days)) {
+        console.log(days[i]);
+        if (days[i].dataDate === year + '-' + month + '-' + date) {
+          days[i].style['background-color'] = 'yellow';
+          console.log(days[i]);
+        }
+      }
       props.clickDay(year + '-' + month + '-' + date);
     }
   };
@@ -98,6 +106,7 @@ const Calendar = (props) => {
           if (newEvent) {
             successCallback(newEvent);
             const newList = handleJson(data);
+            console.log('newlist:', newList);
             if (props.imageList.length == 0 || newList[0].date != props.imageList[0].date) {
               props.setImagelist(newList);
             }

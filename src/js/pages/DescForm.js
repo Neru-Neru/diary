@@ -50,8 +50,7 @@ const DescForm = (props) => {
     url += '&title=' + title + '&desc=' + desc;
     console.log(url);
     window.open(url, '_blank'); // 新しいタブを開き、ページを表示
-    //window.close();
-    //setUrl(url);
+    window.close();
     history.push({
       pathname: '/otherdiary',
     });
@@ -69,48 +68,50 @@ const DescForm = (props) => {
 
   return (
     <div css={Background}>
-      <div class="h-50">
-        <iframe src={url} scrolling="no" width="100%" height="100%"></iframe>
-        {/*<iframe src="http://127.0.0.1:5500/make_thumbnail.html" scrolling="no" width="100%" height="470px"></iframe>*/}
-      </div>
-      <div class="h-50">
-        <h4 class="pt-3">くわしいこと</h4>
-        <form>
-          <div class="mb-3">
-            <label class="control-label" for="title">
-              タイトル
-            </label>
-            <input
-              class="form-control"
-              id="title"
-              type="text"
-              value={title}
-              onChange={changeTitle}
-              autocomplete="off"
-              required
-            ></input>
+      <form class="h-100">
+        <div>
+          <h4 class="pt-3">くわしいこと</h4>
+          <div class="row">
+            <div class="col">
+              <label class="control-label" for="title">
+                タイトル
+              </label>
+              <input
+                class="form-control"
+                id="title"
+                type="text"
+                value={title}
+                onChange={changeTitle}
+                autocomplete="off"
+                required
+              ></input>
+            </div>
+            <div class="col">
+              <label class="control-label" for="desc">
+                せつめい
+              </label>
+              <input
+                class="form-control"
+                id="desc"
+                type="text"
+                value={desc}
+                onChange={changeDesc}
+                autocomplete="off"
+                required
+              ></input>
+            </div>
           </div>
-          <div class="mb-3">
-            <label class="control-label" for="desc">
-              せつめい
-            </label>
-            <textarea
-              class="form-control"
-              id="desc"
-              value={desc}
-              onChange={changeDesc}
-              style={{ resize: 'none', height: '10em' }}
-              autocomplete="off"
-              required
-            ></textarea>
-          </div>
-          <div class="d-grid gap-2 col-6 mx-auto">
-            <button type="button" class="btn btn-secondary" onClick={handleClick}>
-              にっきをかく
-            </button>
-          </div>
-        </form>
-      </div>
+        </div>
+        <div class="my-2" style={{ height: '65%' }}>
+          <iframe src={url} scrolling="no" width="100%" height="100%"></iframe>
+          {/*<iframe src="http://127.0.0.1:5500/make_thumbnail.html" scrolling="no" width="100%" height="100%"></iframe>*/}
+        </div>
+        <div class="d-grid gap-2 col-4 mx-auto">
+          <button type="button" class="btn btn-secondary" onClick={handleClick}>
+            にっきをかく
+          </button>
+        </div>
+      </form>
     </div>
   );
 };
