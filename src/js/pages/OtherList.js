@@ -83,7 +83,7 @@ const OtherList = () => {
           ></Calendar>
         </div>
         <div class="col-7 p-3 h-100">
-          <h3 style={{ 'text-decoration': 'underline solid #ff8c00', 'text-underline-offset': '0.1em' }}>
+          <h3 style={{ 'text-decoration': 'underline solid #ff8c00', 'text-underline-offset': '0.1em', height: '10%' }}>
             {day}のみんなのにっき
           </h3>
           <DiaryList imageList={daylist} clickTile={clickTile}></DiaryList>

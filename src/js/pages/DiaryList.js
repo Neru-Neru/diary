@@ -15,12 +15,12 @@ const useStyles = makeStyles((theme) =>
       display: 'flex',
       flexWrap: 'wrap',
       justifyContent: 'space-around',
-      overflow: 'hidden',
+      overflow: 'scroll',
       backgroundColor: theme.palette.background.paper,
     },
     gridList: {
       width: '100%',
-      height: 700,
+      height: '100%',
     },
     icon: {
       color: 'rgba(255, 255, 255, 0.23)',
@@ -39,7 +39,7 @@ const DiaryList = (props) => {
   console.log(imageList);
 
   return (
-    <div className={classes.root} class="mx-2 my-5">
+    <div className={classes.root} style={{ height: '90%' }} class="mx-2 mt-2">
       <GridList autoHeight cellHeight={250} className={classes.gridList} cols={2}>
         {imageList.map((tile) => (
           <GridListTile

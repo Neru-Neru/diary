@@ -106,7 +106,9 @@ const Mypage = () => {
                 <i class="fas fa-glasses"></i>
               </p>
             </div>
-            <div class="">なまえ：{userstate.username}</div>
+            <div class="mx-3">
+              <p style={{ 'font-size': '1.2em' }}>なまえ：{userstate.username}</p>
+            </div>
           </div>
           <div class="h-75">
             <Calendar
