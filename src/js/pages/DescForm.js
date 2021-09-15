@@ -101,7 +101,7 @@ const DescForm = (props) => {
             </div>
           </div>
         </div>
-        <div class="my-2" style={{ height: '65%' }}>
+        <div class="my-3" style={{ height: '65%' }}>
           <iframe src={url} scrolling="no" width="100%" height="100%"></iframe>
           {/*<iframe src="http://127.0.0.1:5500/make_thumbnail.html" scrolling="no" width="100%" height="100%"></iframe>*/}
         </div>

@@ -67,7 +67,7 @@ const Top = () => {
           <img src="../../img/nab_bl_4.png" style={{ width: '100%' }}></img>
           <div css={Circle(60, 68.5, 50)} class="circle">
             <div css={CircleIn('#fff', '#000')} class="circle-in">
-              <p css={Text(18)}>ロゴ</p>
+              <p css={Text(18)}>Presented by Adachi no Tomodachi 2021</p>
             </div>
           </div>
         </div>

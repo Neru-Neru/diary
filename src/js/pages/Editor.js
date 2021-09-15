@@ -142,7 +142,7 @@ const Editor = () => {
   return (
     <div css={Background}>
       <div class="row h-100">
-        <div class="col-md-7">
+        <div class="col-md-7 h-100">
           <BlocklyWorkspace
             toolboxConfiguration={toolboxCategories}
             className="h-75"
@@ -160,7 +160,7 @@ const Editor = () => {
             ></textarea>
           </div>
         </div>
-        <div class="col-md-5 bg-light">
+        <div class="col-md-5 h-100 bg-light">
           <div class="row border py-3" style={{ height: '20%' }}>
             <p>1：ひだりのがめんで、ブロックをくみたててみよう！</p>
             <p>2：「どうがをみる」ボタンで、どうがをかくにんしてみてね！</p>
@@ -176,10 +176,13 @@ const Editor = () => {
           </div>
           <div class="row border py-3 mt-1 text-center" style={{ height: '20%' }}>
             <div class="h-50">
-              <p>このどうがでいいなら、つぎにしょうさいをきめてね。</p>
-              <p>へんこうするなら、ブロックをそうさしてね。</p>
+              <p>
+                このどうがでいいなら、つぎにしょうさいをきめてね。
+                <br />
+                へんこうするなら、ブロックをそうさしてね。
+              </p>
             </div>
-            <div class="d-grid gap-2 col-6 mx-auto mt-3">
+            <div class="d-grid gap-2 col-6 mx-auto">
               <button type="button" class="btn disabled" id="after_download" onClick={moveForm}>
                 しょうさいをきめる
               </button>

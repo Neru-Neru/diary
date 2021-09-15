@@ -5,8 +5,14 @@ body {
   margin: 0;
   background-color: #8ac7de;
   font-family: 'Kaisei Opti', serif;
+  font-size: 14px;
 }
 
+@media screen and (max-width: 1024px) {
+  body {
+    font-size: 10px;
+  }
+}
 .rampart {
   font-family: 'Rampart One', cursive;
 }

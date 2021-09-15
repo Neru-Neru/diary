@@ -91,7 +91,7 @@ const Background = css`
 
 const ContentBack = css`
   height: 100%;
-  padding: 0 5%;
+  padding: 5% 5%;
   background: rgb(220, 242, 250);
 `;
 

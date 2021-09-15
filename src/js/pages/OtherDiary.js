@@ -70,7 +70,7 @@ const OtherDiary = (props) => {
           </div>
         </div>
         <div>
-          <button onClick={() => this.props.history.goBack()} class="btn btn-outline-secondary">
+          <button onClick={() => props.history.goBack()} class="btn btn-outline-secondary">
             もどる
           </button>
         </div>
