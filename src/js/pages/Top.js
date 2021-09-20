@@ -31,7 +31,7 @@ const Top = () => {
             <Link to="/editor">
               <div css={CircleIn('#988ccc', '#fff')} class="circle-in">
                 <p css={Text(18)}>
-                  にっき<br></br>を<br></br>つくる
+                  にっき<br></br>を<br></br>かく
                 </p>
               </div>
             </Link>
@@ -66,20 +66,37 @@ const Top = () => {
         <div css={Souce}>
           <img src="../../img/nab_bl_4.png" style={{ width: '100%' }}></img>
           <div css={Circle(60, 68.5, 50)} class="circle">
-            <div css={CircleIn('#fff', '#000')} class="circle-in">
-              <p css={Text(18)}>Presented by Adachi no Tomodachi 2021</p>
+            <div css={CircleIn('#fff', '#fff')} class="circle-in">
+              <img
+                src="../../img/logo.png"
+                style={{
+                  position: 'absolute',
+                  margin: '0',
+                  top: '50%',
+                  left: '50%',
+                  transform: 'translate(-50%, -50%)',
+                }}
+              ></img>
             </div>
           </div>
         </div>
 
         <div css={Note}>
-          <p css={NoteP}>「ぶろっこりー」は、日記を通してプログラミングを学ぶWebアプリケーションです。</p>
+          <h4>About</h4>
           <p css={NoteP}>
+            「ぶろっこりー」は、日記を通してプログラミングを学ぶWebアプリケーションです。
+            <br></br>
+            <br></br>
             プログラミングと聞くと、難しいイメージを持たれがちですが、身近な日記という題材を用いて、プログラミング経験をしてみませんか？
-          </p>
-          <p css={NoteP}>
-            まずは、にっきをつくるボタンから始めてみてください。<br></br>
+            <br></br>
+            <br></br>
+            まずは、にっきをかくボタンから始めてみてください。
+            <br></br>
+            <br></br>
             その後は、みんなのにっきを覗いてみたり、じぶんのにっきを確認してみたりしてください。
+            <br></br>
+            <br></br>
+            それでは、ぶろっこりーの世界をお楽しみください！
           </p>
         </div>
       </div>

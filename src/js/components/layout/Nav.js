@@ -112,6 +112,9 @@ const Text = (fontsize) => css`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  @media (max-width: 1120px) {
+    font-size: 8px;
+  }
 `;
 
 const HoverDiv = css`

@@ -51,44 +51,60 @@ const SignIn = () => {
 
   return (
     <div css={Background}>
-      <div class=" d-flex justify-content-center">
-        <h2 class="text-center">ログインがめん</h2>
-      </div>
-      <div class="my-3 mx-auto" style={{ width: '50%' }}>
-        <TextField
-          fullWidth
-          label="なまえ"
-          margin="dense"
-          type="text"
-          value={username}
-          onChange={inputUsername}
-        ></TextField>
-        <TextField
-          fullWidth
-          label="メールアドレス"
-          margin="dense"
-          type="email"
-          value={email}
-          onChange={inputEmail}
-        ></TextField>
-        <TextField
-          fullWidth
-          label="パスワード"
-          margin="dense"
-          type="password"
-          value={password}
-          onChange={inputPassword}
-        ></TextField>
-        <Button
-          onClick={() => {
-            signIn(username, email, password);
-          }}
-          variant="contained"
-          color="primary"
-          class="mt-3 text-end"
-        >
-          ログインする
-        </Button>
+      <div css={ContentBack}>
+        <div class=" d-flex justify-content-center">
+          <h2 class="text-center">ログインがめん</h2>
+        </div>
+        <div class="my-3 mx-auto" style={{ width: '50%' }}>
+          <TextField
+            fullWidth
+            label="なまえ"
+            margin="dense"
+            type="text"
+            value={username}
+            onChange={inputUsername}
+          ></TextField>
+          <label>
+            テスト用➀：トモダチ1<br></br>
+            テスト用⓶：トモダチ2
+          </label>
+          <TextField
+            fullWidth
+            label="メールアドレス"
+            margin="dense"
+            type="email"
+            value={email}
+            onChange={inputEmail}
+          ></TextField>
+          <label>
+            テスト用➀：tomo1@mail.com<br></br>
+            テスト用⓶：tomo2@mail.com
+          </label>
+          <TextField
+            fullWidth
+            label="パスワード"
+            margin="dense"
+            type="password"
+            value={password}
+            onChange={inputPassword}
+          ></TextField>
+          <label>
+            テスト用➀：adatomo<br></br>
+            テスト用⓶：adatomo
+          </label>
+          <div class="mt-5 d-flex justify-content-center">
+            <Button
+              onClick={() => {
+                signIn(username, email, password);
+              }}
+              variant="contained"
+              class="text-center btn btn-primary"
+              size="large"
+            >
+              ログインする
+            </Button>
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -103,6 +119,12 @@ const Background = css`
   transform: translate(-50%, 0%);
   background-color: #8ac7de;
   padding: 0 15%;
+`;
+
+const ContentBack = css`
+  height: 100%;
+  padding-top: 10%;
+  background: rgb(220, 242, 250);
 `;
 
 export default SignIn;

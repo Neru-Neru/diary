@@ -995,15 +995,15 @@ Blockly.JavaScript['money5'] = function (block) {
 
 Blockly.Blocks['money6'] = {
   init: function () {
-    this.appendDummyInput().appendField('おかね6');
+    this.appendDummyInput().appendField('おかね');
     this.setNextStatement(true, null);
     this.setColour(120);
-    this.setTooltip('おかね6');
+    this.setTooltip('おかね');
     this.setHelpUrl('');
   },
 };
-Blockly.JavaScript['money6'] = function (block) {
-  var code = 'おかね6';
+Blockly.JavaScript['money'] = function (block) {
+  var code = 'おかね';
   return code;
 };
 

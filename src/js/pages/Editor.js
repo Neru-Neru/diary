@@ -162,9 +162,13 @@ const Editor = () => {
         </div>
         <div class="col-md-5 h-100 bg-light">
           <div class="row border py-3" style={{ height: '20%' }}>
-            <p>1：ひだりのがめんで、ブロックをくみたててみよう！</p>
-            <p>2：「どうがをみる」ボタンで、どうがをかくにんしてみてね！</p>
-            <p>3：「しょうさいをきめる」ボタンで、にっきのじょうほうをにゅうりょくしてね！</p>
+            <p>
+              1：ひだりのがめんで、ブロックをくみたててみよう！
+              <br />
+              2：「どうがをみる」ボタンで、どうがをかくにんしてみてね！
+              <br />
+              3：「しょうさいをきめる」ボタンで、にっきのじょうほうをにゅうりょくしてね！
+            </p>
           </div>
           <div class="row border py-3" style={{ height: '60%' }}>
             <Movie
@@ -182,7 +186,7 @@ const Editor = () => {
                 へんこうするなら、ブロックをそうさしてね。
               </p>
             </div>
-            <div class="d-grid gap-2 col-6 mx-auto">
+            <div class="d-grid gap-2 col-8 mx-auto">
               <button type="button" class="btn disabled" id="after_download" onClick={moveForm}>
                 しょうさいをきめる
               </button>
